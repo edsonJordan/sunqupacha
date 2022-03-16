@@ -5,15 +5,12 @@ document.getElementById("header-btn").addEventListener("click", (e)=>{
 const DivMain = document.getElementById("main");
 const SliderTestimonial = document.getElementById("carrusel--testimonial");
 const SliderArticles= document.getElementById("carrusel--articles");
-
 SliderTestimonial.addEventListener('mouseover', (e)=>{
     DivMain.addEventListener('mousewheel', ScrollHorizontal, {passive: false }); 
 })
 SliderTestimonial.addEventListener('mouseout', (e)=>{
     DivMain.removeEventListener('mousewheel', ScrollHorizontal, {passive: false });
 })
-
-
 SliderArticles.addEventListener('mouseover', (e)=>{
     DivMain.addEventListener('mousewheel', ScrollArticles, {passive: false }); 
 })
@@ -39,11 +36,6 @@ const ScrollArticles = function(e) {
     return SliderArticles.scrollLeft -= CardTestimonial;    
 };
 /*End Component Slider */     
-
-
-
-
-
 /* Arrows container */
 const ArrowsContent = document.getElementById("arrows");
 ArrowsContent.addEventListener('click', (e)=>{
@@ -62,27 +54,48 @@ ArrowsContent.addEventListener('click', (e)=>{
 
 
 const btn = document.getElementById('button');
+const LabelEmail = document.getElementById('LabelEmail');
+const Pemail= document.getElementById('Pemail');
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
 
-document.getElementById('form')
- .addEventListener('submit', function(event) {
+
+document.getElementById('form').addEventListener('submit', function(event) {
    event.preventDefault();
 
-   btn.value = 'Sending...';
-   const serviceID = 'default_service';
-   const templateID = 'template_8lky4j8';
+   LabelEmail.innerText = '';
+   this.email.classList.remove('invalid')
+   Pemail.textContent = '';
+   if (validateEmail(this.email.value))
+   {
+    btn.value = 'Enviando...';
+    btn.disabled = true;
+    const serviceID = 'default_service';
+    const templateID = 'template_8lky4j8';
+    emailjs.sendForm(serviceID, templateID, this).then(() => {
+    btn.disabled = false;    
+    btn.value = 'Envia Correo';
+    Pemail.textContent = 'Correo Enviado';
+    this.email.value = '';
+    }, (err) => {
+    btn.value = 'Envia Correo';
+    alert(JSON.stringify(err));
+    });
+    
+   }else{
+    this.email.focus();
+    this.email.classList.add('invalid');
+    LabelEmail.innerText = 'Email invalido';
+   }
+
+   
+});
 
 
-grecaptcha.enterprise.ready(function() {
-    grecaptcha.enterprise.execute('6LeMe-UeAAAAADBjmUNKqLYyPPpwNQt3uR8TF4Yr', {action: 'login'}).then(function(token) {
-                emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
-                btn.value = 'Envia Correo';
-                alert('Sent!');
-                }, (err) => {
-                btn.value = 'Envia Correo';
-                alert(JSON.stringify(err));
-                });
-            });
+  grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6LfzruYeAAAAALLMLDoclFI5hYVHYhf6oBSecagB', {action: 'submit'}).then(function(token) {
+       
     });
 });
-   
