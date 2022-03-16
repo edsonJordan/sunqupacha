@@ -15,10 +15,7 @@
     <meta property="og:description" name="twitter:description"
       content="Destaca con las mayores plataformas de venta de productos y servicios.">
     <meta property="og:image" content="https://res.cloudinary.com/sunqupacha/image/upload/v1647360411/sunqupacha/illustration/og_logo_bhf2nk.jpg"/>
-
-
     <link rel="stylesheet" href="style.css">
-   
 </head>
 <body>
     <header class="header">
@@ -155,16 +152,15 @@
                         reserve una consulta
                     </h2>
                 </div>
-                <form class="form__articles" action="" method="post">
+                <form class="form__articles" id="form" action="" method="post">
                     <div class="section__form">
                         <label class="label label__form" for="email">
-                            <input class="input__text" type="email" name="email" id="email" placeholder="Correo Electrónico">
+                            <input class="input__text" type="email" name="email" id="email" placeholder="Correo Electrónico" required>
                         </label>                        
                     </div>
                     <div class="section__form">
-                        <button class="btn btn-solid-primary bg__primary--600" type="submit">
-                            reserva gratis
-                        </button>
+                        <input class="btn btn-solid-primary bg__primary--600" id="button" type="submit" value="Envia Correo">
+                          
                     </div>
                 </form>
             </div>
@@ -319,6 +315,14 @@
             </div>
         </section>
     </main>
+            <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <script type="text/javascript">
+        emailjs.init('4x4zfdBKSdqkKXiNS')
+        </script>
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeMe-UeAAAAADBjmUNKqLYyPPpwNQt3uR8TF4Yr"></script>
+   
     <footer class="footer">
         <div class="content__footer">
             <div class="block__footer">

@@ -59,3 +59,30 @@ ArrowsContent.addEventListener('click', (e)=>{
            break;
    }
 })
+
+
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+   const serviceID = 'default_service';
+   const templateID = 'template_8lky4j8';
+
+
+grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6LeMe-UeAAAAADBjmUNKqLYyPPpwNQt3uR8TF4Yr', {action: 'login'}).then(function(token) {
+                emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                btn.value = 'Envia Correo';
+                alert('Sent!');
+                }, (err) => {
+                btn.value = 'Envia Correo';
+                alert(JSON.stringify(err));
+                });
+            });
+    });
+});
+   
