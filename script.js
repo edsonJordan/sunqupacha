@@ -56,6 +56,8 @@ ArrowsContent.addEventListener('click', (e)=>{
 const btn = document.getElementById('button');
 const LabelEmail = document.getElementById('LabelEmail');
 const Pemail= document.getElementById('Pemail');
+
+
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
@@ -64,38 +66,40 @@ function validateEmail(email) {
 
 document.getElementById('form').addEventListener('submit', function(event) {
    event.preventDefault();
+    let responseCaptcha = grecaptcha.getResponse();
+    const InputEmail = this.email
+    const CaptchaDiv = document.getElementById('captcha');
 
-   LabelEmail.innerText = '';
-   this.email.classList.remove('invalid')
-   Pemail.textContent = '';
-   if (validateEmail(this.email.value))
-   {
+    Pemail.textContent = '';
+    if(!validateEmail(InputEmail.value)) {
+        InputEmail.focus();
+        InputEmail.classList.add('invalid');
+        return  LabelEmail.innerText = 'Porfavor ingrese un correo válido';
+    }
+    if( responseCaptcha.length === 0)   
+    {
+        InputEmail.classList.remove('invalid');
+        return LabelEmail.textContent = 'El captcha no ha sido completado';
+    }
     btn.value = 'Enviando...';
     btn.disabled = true;
-    const serviceID = 'default_service';
-    const templateID = 'template_8lky4j8';
-    emailjs.sendForm(serviceID, templateID, this).then(() => {
+    emailjs.send('default_service', 'template_q09sls1', {
+        'email': this.email.value,
+        'g-recaptcha-response': '6Lf7-eceAAAAAC8ISfbb6Nn_jd2LJRdjNQH8la_9'
+    }, '4x4zfdBKSdqkKXiNS').then(() => {
     btn.disabled = false;    
     btn.value = 'Envia Correo';
-    Pemail.textContent = 'Correo Enviado';
-    this.email.value = '';
+    Pemail.textContent = '¡Correo enviado!';
+    grecaptcha.reset();
+    LabelEmail.textContent = '';
+    InputEmail.value = '';
     }, (err) => {
     btn.value = 'Envia Correo';
     alert(JSON.stringify(err));
     });
-    
-   }else{
-    this.email.focus();
-    this.email.classList.add('invalid');
-    LabelEmail.innerText = 'Email invalido';
-   }
+   
+
 
    
 });
 
-
-  grecaptcha.enterprise.ready(function() {
-    grecaptcha.enterprise.execute('6LfzruYeAAAAALLMLDoclFI5hYVHYhf6oBSecagB', {action: 'submit'}).then(function(token) {
-       
-    });
-});

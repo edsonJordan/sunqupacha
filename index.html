@@ -16,6 +16,7 @@
       content="Destaca con las mayores plataformas de venta de productos y servicios.">
     <meta property="og:image" content="https://res.cloudinary.com/sunqupacha/image/upload/v1647360411/sunqupacha/illustration/og_logo_bhf2nk.jpg"/>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <header class="header">
@@ -152,15 +153,15 @@
                         reserve una consulta
                     </h2>
                 </div>
-                <form class="form__articles" id="form"  method="post">
+                <form class="form__articles" id="form"  method="POST">
                     <div class="section__form">
                         <label class="label label__form" id="LabelEmail" for="email"> </label>  
                             <input class="input__text" type="text" name="email" id="email" placeholder="Correo Electrónico" >
                         <p class="p p__form" id="Pemail" ></p>               
                     </div>
+                    <div id="captcha" class="g-recaptcha" data-sitekey="6Lf7-eceAAAAAO2mAeSJkmhqIMq7fL8zDVDawhbG"></div>
                     <div class="section__form">
-                        <input class="btn btn-solid-primary bg__primary--600" id="button" type="submit" value="Envia Correo">
-                          
+                        <input class="btn btn-solid-primary bg__primary--600" id="button" type="submit" value="Envia Correo">                          
                     </div>
                 </form>
             </div>
@@ -315,13 +316,7 @@
             </div>
         </section>
     </main>
-            <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script type="text/javascript">
-        emailjs.init('4x4zfdBKSdqkKXiNS')
-        </script>
-       <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfzruYeAAAAALLMLDoclFI5hYVHYhf6oBSecagB"></script>
-
+        
    
     <footer class="footer">
         <div class="content__footer">
@@ -385,6 +380,12 @@
             </div>
         </div>
     </footer>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+        emailjs.init('4x4zfdBKSdqkKXiNS')
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

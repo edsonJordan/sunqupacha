@@ -247,8 +247,11 @@ img{
     line-height: calc(var(--text__normal) * 1.4);
 }
 .p__form{
-    color: #CCE5CF;
+    color: rgb(250,250,250 );
     font-size: var(--text__smaller);
+    font-family: var(--family__primary);
+    font-size: var(--text__small);
+    font-weight: 500;
     min-height: 1rem;
 }
 .span{
@@ -308,13 +311,14 @@ img{
 .section__form{
     display: flex;
     flex-direction: column;
-    max-width: 100%;
+    max-width: 302px;
     row-gap: 5px;
     font-family: var(--family__secondary);
 }
 .label__form{
     color: rgb(255, 255, 255);
-    font-size: var(--text__normal);
+    font-size: var(--text__small);
+    font-family: var(--family__primary);
     min-height: 1rem;
 }
 .input__text{
@@ -332,6 +336,11 @@ img{
 .input__text.invalid{
     border: 1px solid #C92F2D;
 }
+iframe {
+    border-radius: 5px;
+    width: 302px;
+    height: 76px;
+ }
 .input__text:focus{
     outline: 1px solid var(--color__primary--600);
 }
@@ -650,7 +659,6 @@ img{
 
     /* Start Section Principal */
     .section__principal{
-        margin-top: 3rem;
         background-image: url("https://res.cloudinary.com/sunqupacha/image/upload/v1647290130/sunqupacha/illustration/Wave_m2gdby.svg");
         background-repeat: no-repeat;
         background-size:  100%;
@@ -887,13 +895,15 @@ img{
     }
 
      .block__tittle.article{
-        width: 70%;
+        width: 60%;
+        min-height: 240px;
     }
     .h2--article{
         align-self: flex-start;
     }
     .form__articles{
-        width: 30%;
+        width: 40%;
+        min-height: 240px;
     }
     .block__content.testimonial{
         align-self: center;
