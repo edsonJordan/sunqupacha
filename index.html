@@ -15,12 +15,13 @@
     <meta property="og:description" name="twitter:description"
       content="Destaca con las mayores plataformas de venta de productos y servicios.">
     <meta property="og:image" content="https://res.cloudinary.com/sunqupacha/image/upload/v1647360411/sunqupacha/illustration/og_logo_bhf2nk.jpg"/>
+
+    <link rel="stylesheet" href="config.css">
+    <link rel="stylesheet" href="components.css">
     <link rel="stylesheet" href="style.css">
+
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
     <meta name="facebook-domain-verification" content="ymeukmp4ttsibf5pswmyf3cur2x4tj" />
-
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -37,11 +38,10 @@
     src="https://www.facebook.com/tr?id=635580070875733&ev=PageView&noscript=1"
     /></noscript>
 </head>
-
 <body>
     <header class="header">
         <div class="header__content">
-            <a class="link__logo" href="#">
+            <a class="link__logo" href="/">
                 <img src="https://res.cloudinary.com/sunqupacha/image/upload/v1647290125/sunqupacha/illustration/imagotipo-icon_cxhvsa.svg" class="logo" alt="">
                 sunquPacha
             </a>
@@ -57,6 +57,10 @@
         </div>
     </header>
     <nav class="nav" id="nav">
+        <a class="link__logo--nav none" href="/">
+            <img src="https://res.cloudinary.com/sunqupacha/image/upload/v1647290125/sunqupacha/illustration/imagotipo-icon_cxhvsa.svg" class="logo" alt="">
+            sunquPacha
+        </a>
         <ul class="nav__content" >
             <li class="nav__item">
                 <a href="index.html" class="nav__link">servicios</a>
@@ -170,7 +174,7 @@
             <div class="content__section">
                 <div class="block__tittle article">
                     <h2 class="h2 h2--article border__top--solid">
-                        reserve una consulta
+                        recibe noticias y promociones
                     </h2>
                 </div>
                 <form class="form__articles" id="form"  method="POST">
@@ -278,9 +282,24 @@
                         artículos de desarrollo digital
                     </h2>
                 </div>
-                <div class="block__content testimonial">
+                <div class="block__content articles">
                     <div class="content__cards--blog-article" id="carrusel--articles">
-                        <article class="card solid">
+                        <article class="card solid card-articles">
+                            <div class="content__card bg__primary--600">
+                                <div class="card__header">                                
+                                    <h3 class="h3 h3__card">
+                                        top 5 SaaS Businesses – august 2021
+                                    </h3>            
+                                </div>
+                                <div class="card__body">                                    
+                                    <p class="p">
+                                        Are you currently using one of the top SaaS businesses, according to the team at Lunar Strategy? Check out this list of our top SaaS                                                   
+                                    </p>
+                                    <a class="btn btn-solid-white" href="#" >comienza a mirar</a>                                
+                                </div>
+                            </div>
+                        </article>                        
+                        <article class="card solid card-articles">
                             <div class="content__card bg__primary--600">
                                 <div class="card__header">                                
                                     <h3 class="h3 h3__card">
@@ -295,8 +314,22 @@
                                 </div>
                             </div>
                         </article>
-                        
-                        <article class="card solid">
+                        <article class="card solid card-articles">
+                            <div class="content__card bg__primary--600">
+                                <div class="card__header">                                
+                                    <h3 class="h3 h3__card">
+                                        top 5 SaaS Businesses – august 2021
+                                    </h3>            
+                                </div>
+                                <div class="card__body">                                    
+                                    <p class="p">
+                                        Are you currently using one of the top SaaS businesses, according to the team at Lunar Strategy? Check out this list of our top SaaS                                                   
+                                    </p>
+                                    <a class="btn btn-solid-white" href="#" >comienza a mirar</a>                                
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card solid card-articles">
                             <div class="content__card bg__primary--600">
                                 <div class="card__header">                                
                                     <h3 class="h3 h3__card">
@@ -322,9 +355,9 @@
                         <span>¿por qué SunquPacha?</span> 
                     </h2>
                     <p class="p p--why">
-                        para conseguir clientes, es imperativo ser visto por la masa. Cada empresa exitosa es única y necesita estrategias de marketing digital contrastantes. Reserva una reunión con nosotros y te ayudaremos a encontrar la estrategia correcta para tu empresa.
+                        para conseguir clientes, es imperativo ser visto por la masa. Cada empresa exitosa es única y necesita una personalizada imagen que lo represente en la web. Reserva una reunión con nosotros y te ayudaremos a encontrar la mejor imagen para tu empresa.
                     </p>
-                    <a class="btn btn-solid-primary" href="#" >reservar reunión gratis</a>
+                    <a class="btn btn-solid-primary" href="https://api.whatsapp.com/send?phone=918874873&text=Hola%20necesito%20reservar%20una%20reuni%C3%B3n%20de%20asesor%C3%ADa%20gratuita" >reservar reunión gratis</a>
                 </div>
                 <div class="block__content--why">
                     <!--    Figure -->
@@ -336,8 +369,6 @@
             </div>
         </section>
     </main>
-        
-   
     <footer class="footer">
         <div class="content__footer">
             <div class="block__footer">
@@ -400,7 +431,6 @@
             </div>
         </div>
     </footer>
-
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <script type="text/javascript">

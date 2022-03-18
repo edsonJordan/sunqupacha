@@ -6,10 +6,10 @@ const DivMain = document.getElementById("main");
 const SliderTestimonial = document.getElementById("carrusel--testimonial");
 const SliderArticles= document.getElementById("carrusel--articles");
 SliderTestimonial.addEventListener('mouseover', (e)=>{
-    DivMain.addEventListener('mousewheel', ScrollHorizontal, {passive: false }); 
+    DivMain.addEventListener('mousewheel', ScrollTestimonial, {passive: false }); 
 })
 SliderTestimonial.addEventListener('mouseout', (e)=>{
-    DivMain.removeEventListener('mousewheel', ScrollHorizontal, {passive: false });
+    DivMain.removeEventListener('mousewheel', ScrollTestimonial, {passive: false });
 })
 SliderArticles.addEventListener('mouseover', (e)=>{
     DivMain.addEventListener('mousewheel', ScrollArticles, {passive: false }); 
@@ -17,53 +17,73 @@ SliderArticles.addEventListener('mouseover', (e)=>{
 SliderArticles.addEventListener('mouseout', (e)=>{
     DivMain.removeEventListener('mousewheel', ScrollArticles, {passive: false });
 })
-const ScrollHorizontal = function(e) {
+const ScrollTestimonial = function(e) {
     e.preventDefault();  
     const isRight= e.deltaY > 0;
+    const SliderTestimonial = document.getElementById("carrusel--testimonial");
     let CardTestimonial = SliderTestimonial.children[0].clientWidth;
+    const CountCards= SliderTestimonial.childElementCount;
+    const isLeftEnd = SliderTestimonial.scrollLeft <= 0;
+    const isRightEnd = SliderTestimonial.scrollLeft > (CardTestimonial * (CountCards - 2));
     if(isRight){
-        return SliderTestimonial.scrollLeft += CardTestimonial;       
+            if(isRightEnd) return  SliderTestimonial.scrollLeft = 0;
+         return SliderTestimonial.scrollLeft += CardTestimonial;       
          }
+        if(isLeftEnd)  return SliderTestimonial.scrollLeft = (CardTestimonial * (CountCards - 1));
     return SliderTestimonial.scrollLeft -= CardTestimonial;    
 };
 const ScrollArticles = function(e) {
     e.preventDefault();  
     const isRight= e.deltaY > 0;
-    let CardTestimonial = SliderArticles.children[0].clientWidth;
+    const SliderArticles= document.getElementById("carrusel--articles");
+    let CardArticle = SliderArticles.children[0].clientWidth;
+    const CountArticles = SliderArticles.childElementCount;
+    const isLeftEnd = SliderArticles.scrollLeft <= 0;
+    const isRightEnd = SliderArticles.scrollLeft >= (CardArticle * (CountArticles -2));
     if(isRight){
-        return SliderArticles.scrollLeft += CardTestimonial;       
+            if(isRightEnd) return  SliderArticles.scrollLeft = 0;
+        return SliderArticles.scrollLeft += CardArticle;       
          }
-    return SliderArticles.scrollLeft -= CardTestimonial;    
+        if(isLeftEnd)  return SliderArticles.scrollLeft = (CardArticle * (CountArticles - 1));
+    return SliderArticles.scrollLeft -= CardArticle;    
 };
 /*End Component Slider */     
 /* Arrows container */
-const ArrowsContent = document.getElementById("arrows");
-ArrowsContent.addEventListener('click', (e)=>{
+const ArrowsTestimonial = document.getElementById("arrows");
+ArrowsTestimonial.addEventListener('click', (e)=>{
+    const SliderTestimonial = document.getElementById("carrusel--testimonial");
     let CardTestimonial = SliderTestimonial.children[0].clientWidth;
+    const CountCards= SliderTestimonial.childElementCount;
+    let isLeftEnd = SliderTestimonial.scrollLeft <= 0;
+    let isRightEnd = SliderTestimonial.scrollLeft > (CardTestimonial * (CountCards - 2));
+
+    /* console.log("tamaño de scroll: "+CardTestimonial * (CountCards - 1)); */
+    /* console.log("cards para mostrar: "+ (CountCards - 1)); */
+    console.log("Scroll maximo para mostrar: " + (CardTestimonial * (CountCards - 2)));
+    console.log("tamaño de un card: "+CardTestimonial);
+    console.log("posición de scroll: "+ SliderTestimonial.scrollLeft);
    switch (true) {
+       //right
+       case e.target.className.indexOf('arrow__right--testimonial') !== -1:
+        if(isRightEnd) return  SliderTestimonial.scrollLeft = 0;
+    SliderTestimonial.scrollLeft += CardTestimonial;    
+        break;
+       //left
        case e.target.className.indexOf('arrow__left--testimonial') !== -1:
+        if(isLeftEnd)  return SliderTestimonial.scrollLeft = (CardTestimonial * (CountCards - 1));
         SliderTestimonial.scrollLeft -= CardTestimonial; 
-           break;
-        case e.target.className.indexOf('arrow__right--testimonial') !== -1:
-        SliderTestimonial.scrollLeft += CardTestimonial;    
-            break;
+           break;                   
        default:
            break;
    }
 })
-
-
 const btn = document.getElementById('button');
 const LabelEmail = document.getElementById('LabelEmail');
 const Pemail= document.getElementById('Pemail');
-
-
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
-
-
 document.getElementById('form').addEventListener('submit', function(event) {
    event.preventDefault();
     let responseCaptcha = grecaptcha.getResponse();
@@ -102,4 +122,3 @@ document.getElementById('form').addEventListener('submit', function(event) {
 
    
 });
-
