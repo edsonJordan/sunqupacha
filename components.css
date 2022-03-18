@@ -398,7 +398,8 @@ iframe {
     }
     .block__content.articles{
         align-self: center;
-        width: 50%;
+        width: 100%;
+        
     }
     .content__cards--blog-article > *{
         z-index: 1;

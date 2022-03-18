@@ -274,7 +274,11 @@
     .content__cards--testimonial, .content__cards--blog-article{
         overflow-x:hidden; 
     }
-    
+    .block__content.articles{
+        align-self: center;
+        width: 40%;
+        
+    }
     .section__principal{
         min-height: calc(90vh - 3rem);
     }
