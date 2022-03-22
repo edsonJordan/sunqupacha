@@ -16,7 +16,7 @@
 }
 @font-face {
     font-family: 'EuroStyle';
-    font-style: normal;
+    font-style: bold;
     font-weight: 800;
     font-display: swap;
     src: url("https://res.cloudinary.com/sunqupacha/raw/upload/v1647017558/sunqupacha/fonts/EurostileBold_x7ztsv.ttf") format('woff2');
@@ -24,7 +24,7 @@
 }
 @font-face {
     font-family: 'EuroStyle';
-    font-style: normal;
+    font-style: bolder;
     font-weight: 900;
     font-display: swap;
     src: url("https://res.cloudinary.com/sunqupacha/raw/upload/v1647017558/sunqupacha/fonts/EurostileExtended_rlyad1.ttf") format('woff2');
@@ -36,6 +36,9 @@
         --family__secondary: 'EuroStyle', sans-serif;
         /* Colors principal */
         --color__primary:31, 171, 226;
+
+        --color__error: 201, 64, 57;  
+        --color__success: 51, 168, 109; 
         /* Color primary compass */
         --color__primary--50:#CEFDD6;
         --color__primary--100:#A9FAC8;
@@ -60,6 +63,9 @@
         --color__black--800:#090909;
         --color__black--900:#080808;
         --color__black--1000:#070707;
+
+
+
         /* Size text */
         --tittle__h1: calc(1rem * 2.25);
         --tittle__h2: calc(1rem * 1.75);
@@ -80,6 +86,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: rgb(250, 250, 250);    
+
 }
 ::placeholder {
     color: var(--color__black--100);
@@ -89,6 +96,7 @@ body{
 a{
     text-decoration: none;
 }
+
 ul{
     margin-top: 0;
     margin-bottom: 0;

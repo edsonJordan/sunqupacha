@@ -5,16 +5,16 @@ document.getElementById("header-btn").addEventListener("click", (e)=>{
 const DivMain = document.getElementById("main");
 const SliderTestimonial = document.getElementById("carrusel--testimonial");
 const SliderArticles= document.getElementById("carrusel--articles");
-SliderTestimonial.addEventListener('mouseover', (e)=>{
+SliderTestimonial?.addEventListener('mouseover', (e)=>{
     DivMain.addEventListener('mousewheel', ScrollTestimonial, {passive: false }); 
 })
-SliderTestimonial.addEventListener('mouseout', (e)=>{
+SliderTestimonial?.addEventListener('mouseout', (e)=>{
     DivMain.removeEventListener('mousewheel', ScrollTestimonial, {passive: false });
 })
-SliderArticles.addEventListener('mouseover', (e)=>{
+SliderArticles?.addEventListener('mouseover', (e)=>{
     DivMain.addEventListener('mousewheel', ScrollArticles, {passive: false }); 
 })
-SliderArticles.addEventListener('mouseout', (e)=>{
+SliderArticles?.addEventListener('mouseout', (e)=>{
     DivMain.removeEventListener('mousewheel', ScrollArticles, {passive: false });
 })
 const ScrollTestimonial = function(e) {
@@ -50,7 +50,7 @@ const ScrollArticles = function(e) {
 /*End Component Slider */     
 /* Arrows container */
 const ArrowsTestimonial = document.getElementById("arrows");
-ArrowsTestimonial.addEventListener('click', (e)=>{
+ArrowsTestimonial?.addEventListener('click', (e)=>{
     const SliderTestimonial = document.getElementById("carrusel--testimonial");
     let CardTestimonial = SliderTestimonial.children[0].clientWidth;
     const CountCards= SliderTestimonial.childElementCount;
@@ -84,7 +84,8 @@ function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
-document.getElementById('form').addEventListener('submit', function(event) {
+
+document.getElementById('form')?.addEventListener('submit', function(event) {
    event.preventDefault();
     let responseCaptcha = grecaptcha.getResponse();
     const InputEmail = this.email

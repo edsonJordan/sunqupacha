@@ -1,5 +1,3 @@
-
-
 /* Navigation */
 .nav{
     position: fixed;
@@ -48,6 +46,7 @@
 /* Star Main */
 .main{
     flex-direction: column;
+   
 }
 /* End Main */
 
@@ -71,9 +70,31 @@
         color: var(--color__black--400);
         line-height: calc(var(--tittle__h1) * 1.2);
     }
- 
-
-    .h1--principal span:nth-child(2){
+    
+    .h1--principal .span{
+        font-family: var(--family__primary);
+        font-size: var(--tittle__h1);   
+        font-weight: 800;
+        color: var(--color__black--400);
+        line-height: calc(var(--tittle__h1) * 1.2); 
+    }
+    .h1--principal .span:nth-child(1){
+        position: relative;
+        width: fit-content;
+        display: block;
+        z-index: 20;
+    }
+    .h1--principal .span:nth-child(1)::after{
+        content: "";
+        display: block;
+        position: relative;
+        width: auto;
+        height: 15px;
+        background-color: rgba(var(--color__primary), .2);
+        z-index: -1;
+        top: -15px;
+    }
+    .h1--principal .span:nth-child(2){
         color: rgb(var(--color__primary));
     }
     .p--principal:first-letter{
@@ -129,6 +150,7 @@
 
     /* Start Section article envio */
     .section__articles{
+        overflow: hidden;
         background-color: rgb(var(--color__primary));
     }
     .h2--article{
@@ -137,6 +159,7 @@
         line-height: var(--text__large);
         color: white;
     }
+    
     /* End Section start */
 
     /* Start Section why we */
@@ -152,6 +175,71 @@
         font-size: var(--text__small);
     }
     /* End Section why we */
+
+    /* Start Section Formulario */
+    .form-contact{
+        display: flex;
+        flex-direction: column;
+        row-gap: 4rem;
+    }
+    .h2__form-contact{
+        align-self: flex-start;
+        
+    }
+    .h2__form-contact.border-solid::after{
+        margin-left: 0;
+    }
+    .block__contact{
+        display: flex;
+        flex-direction: column;
+        row-gap: 39px;
+    }
+    .block__contact:nth-child(2){
+        row-gap: 8.2px;
+    }
+    .p__contact{
+        color: var(--color__black--200);
+        font-size: var(--text__normal);
+        font-family: var(--family__primary);
+        font-weight: 600;
+        min-height: 1rem;
+    }
+    .p__contact:last-of-type:first-letter{
+        text-transform: lowercase;
+    }
+    .block__date--contact{
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+    .sociales-contact{
+        display: flex;
+        flex-direction: row;
+        column-gap: 12px;
+    }
+    .span__contact{
+        font-family: var(--family__primary);
+        color: var(--color__black--200);
+    }
+    .span__contact::first-letter{
+        text-transform: uppercase;
+    }
+    .section__form--contact .btn{
+        max-width: none;
+        
+    }
+    .p__form--contact{
+        color: rgb(var(--color__success));
+        font-size: var(--text__small);
+        font-family: var(--family__primary);
+        font-weight: 600;
+        min-height: 1rem;
+    }
+
+    /* End Section Form contact */
+
+
+
 /* Section */
 
 
@@ -172,7 +260,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        width: 100%;         
+        max-width: inherit;         
         height: 3rem;
         left: 0;
         position: fixed;
@@ -236,6 +324,12 @@
     .card-outwork:nth-child(1){
         z-index: 4;
     }
+    .content__cards--services{
+       flex-direction: row;
+    }
+    .column__cards--services:nth-child(2){
+        margin-top: 8rem;
+    }
     .section__principal .content__section, .section__articles .content__section, .section__why .content__section{
         align-items: center;
         justify-content: space-between;
@@ -268,9 +362,16 @@
     .card__body--testimonial{
         justify-content: center;
     }
+    .form-contact{
+        flex-direction: row;
+        justify-content: space-between;
+    }
     
 }
 @media(min-width: 1024px){
+    :root{
+        --tittle__h1: calc(1rem * 2.5);
+    }
     .content__cards--testimonial, .content__cards--blog-article{
         overflow-x:hidden; 
     }
@@ -297,7 +398,9 @@
     .block__footer:nth-child(1){
         grid-column:span 2;
     }
-
+    .block__contact{
+        width: 40%;
+    }
 }
 @media (min-width: 1408px){
     .header__content,  .content__footer{
