@@ -29,7 +29,7 @@
     letter-spacing: .05rem;
     font-weight: 500;
     padding: 0.75rem 1.25rem;
-    font-size: var(--text__normal);
+    font-size: var(--text__small);
 }
 .btn::first-letter{
     text-transform: uppercase;
@@ -249,6 +249,11 @@
     .img-card{
         width:20%;
     }
+    .img-rounded{
+        border-radius: 50%;
+        width: 112px;
+        height: 112px;
+    }
     .content__cards-simple .card{
         border-radius: 30px;
     }
@@ -315,6 +320,27 @@
     }
       
 /* End Card simple */
+
+/* Start Section Grid cards */
+.block__grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    column-gap: 51px;
+    row-gap: 86px;
+}
+.block__grid .card{
+   background-color: transparent;
+   
+   border-radius: 20px;
+}
+.block__grid .card .content__card{
+    margin: 0;
+    padding:57px 41px;
+    min-height: 375px;
+    overflow: hidden;
+}
+/* End Section Grid cards */
+
     /* Content card outwork */
     .content__cards--outwork{
         display: flex;
