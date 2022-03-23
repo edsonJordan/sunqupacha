@@ -336,7 +336,7 @@
 .block__grid .card .content__card{
     margin: 0;
     padding:57px 41px;
-    min-height: 375px;
+    /* min-height: 375px; */
     overflow: hidden;
 }
 /* End Section Grid cards */
