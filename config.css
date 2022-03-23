@@ -30,9 +30,9 @@
     src: url("https://res.cloudinary.com/sunqupacha/raw/upload/v1647017558/sunqupacha/fonts/EurostileExtended_rlyad1.ttf") format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
 :root{
-        --family__primary: 'Roboto Condensed', sans-serif;
+        --family__primary:'Roboto Condensed', sans-serif;;
         --family__secondary: 'EuroStyle', sans-serif;
         /* Colors principal */
         --color__primary:31, 171, 226;
@@ -73,8 +73,8 @@
         --tittle__h4: calc(1rem * 1);
         --text__large: calc(1rem * 1.75);
         --text__medium: calc(1rem * 1.25);
-        --text__normal: 16px;
-        --text__small: 14px;
+        --text__normal: 18px;
+        --text__small: 16px;
         --text__smaller: 12px;
         /* End size text */
         /* Animation Time */
@@ -149,4 +149,17 @@ h1::first-letter, h2::first-letter, h3::first-letter{
 }
 img{
     box-sizing: border-box; 
+}
+input:-webkit-autofill,
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #ACDBC4 inset ;
+    color: rgb(var(--color__success));
+    
+}
+input:-webkit-autofill{
+    -webkit-text-fill-color: rgb(var(--color__success)) !important;
+    font-family: var(--family__primary);
 }
