@@ -555,7 +555,7 @@
         background-size: cover;
     }
     .arrow__left--testimonial:hover{
-        background-image: url("https://res.cloudinary.com/sunqupacha/image/upload/v1647290130/sunqupacha/illustration/arrow__left--active_ocof2p.svg");
+        
         transform: scale(1.2);
         transition: all .5s ;
         transition-property: transform, background-image;
@@ -566,7 +566,7 @@
         background-size: cover;
     }
     .arrow__right--testimonial:hover{
-        background-image: url("https://res.cloudinary.com/sunqupacha/image/upload/v1647290125/sunqupacha/illustration/arrow__right--active_mq3xxi.svg");
+        
         transform: scale(1.2);
         transition: all .5s ;
         transition-property: transform, background-image;
