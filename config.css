@@ -163,3 +163,6 @@ input:-webkit-autofill{
     -webkit-text-fill-color: rgb(var(--color__success)) !important;
     font-family: var(--family__primary);
 }
+b{
+    font-weight: 900;
+}
