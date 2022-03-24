@@ -310,8 +310,7 @@
     }
     .card.solid .content__card .card__body .p{
         color: rgb(255,255,255);
-        font-weight: 300;
-        font-size: var(--text__normal);
+        font-size: var(--text__smaller);
         line-height: calc(var(--text__normal) * 1.4);
         letter-spacing: .07rem;
     }
@@ -515,7 +514,7 @@
     .card__body--testimonial .p{
         color: var(--color__black--200);
         font-size: var(--text__medium);
-        font-weight: 700;
+        font-weight: 800;
     }
     .img-testimonial{
         object-fit: cover;

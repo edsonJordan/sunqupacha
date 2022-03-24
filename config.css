@@ -73,8 +73,8 @@
         --tittle__h4: calc(1rem * 1);
         --text__large: calc(1rem * 1.75);
         --text__medium: calc(1rem * 1.25);
-        --text__normal: 18px;
-        --text__small: 16px;
+        --text__normal: 16px;
+        --text__small: 14px;
         --text__smaller: 12px;
         /* End size text */
         /* Animation Time */
