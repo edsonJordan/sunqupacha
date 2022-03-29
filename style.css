@@ -414,9 +414,9 @@
     :root{
         --tittle__h1: calc(1rem * 2.5);
     }
-    .content__cards--testimonial, .content__cards--blog-article{
+    /* .content__cards--testimonial, .content__cards--blog-article{
         overflow-x:hidden; 
-    }
+    } */
     .block__content.articles{
         align-self: center;
         width: 40%;

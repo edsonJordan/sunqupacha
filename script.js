@@ -59,9 +59,7 @@ ArrowsTestimonial?.addEventListener('click', (e)=>{
 
     /* console.log("tamaño de scroll: "+CardTestimonial * (CountCards - 1)); */
     /* console.log("cards para mostrar: "+ (CountCards - 1)); */
-    console.log("Scroll maximo para mostrar: " + (CardTestimonial * (CountCards - 2)));
-    console.log("tamaño de un card: "+CardTestimonial);
-    console.log("posición de scroll: "+ SliderTestimonial.scrollLeft);
+  
    switch (true) {
        //right
        case e.target.className.indexOf('arrow__right--testimonial') !== -1:
