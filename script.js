@@ -5,17 +5,35 @@ document.getElementById("header-btn").addEventListener("click", (e)=>{
 const DivMain = document.getElementById("main");
 const SliderTestimonial = document.getElementById("carrusel--testimonial");
 const SliderArticles= document.getElementById("carrusel--articles");
+
+
+
+
+
 SliderTestimonial?.addEventListener('mouseover', (e)=>{
-    DivMain.addEventListener('mousewheel', ScrollTestimonial, {passive: false }); 
+   /*  DivMain.addEventListener('mousewheel', ScrollTestimonial, {passive: false });  */
 })
 SliderTestimonial?.addEventListener('mouseout', (e)=>{
-    DivMain.removeEventListener('mousewheel', ScrollTestimonial, {passive: false });
+    /* DivMain.removeEventListener('mousewheel', ScrollTestimonial, {passive: false }); */
 })
+
+
+
+
+setInterval(() => {
+    const CountCards= SliderTestimonial.childElementCount;
+    const CardTestimonial = SliderTestimonial.children[0].clientWidth;
+    if(SliderTestimonial.scrollLeft > (CardTestimonial * (CountCards - 2)))  return SliderTestimonial.scrollLeft = 0;
+    SliderTestimonial.scrollLeft += CardTestimonial;
+}, 3000);
+
+
+
 SliderArticles?.addEventListener('mouseover', (e)=>{
-    DivMain.addEventListener('mousewheel', ScrollArticles, {passive: false }); 
+    /* DivMain.addEventListener('mousewheel', ScrollArticles, {passive: false });  */
 })
 SliderArticles?.addEventListener('mouseout', (e)=>{
-    DivMain.removeEventListener('mousewheel', ScrollArticles, {passive: false });
+   /*  DivMain.removeEventListener('mousewheel', ScrollArticles, {passive: false }); */
 })
 const ScrollTestimonial = function(e) {
     e.preventDefault();  

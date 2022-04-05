@@ -470,9 +470,10 @@
         width: 100%;
         row-gap: 4rem;                            
         /*  padding: 30px 15px;    */     
-        overflow-x: scroll;
+        overflow-x: hidden;
         scroll-behavior: smooth;
         scroll-snap-type: x mandatory;
+
     }
     .content__cards--testimonial > * {
        /* z-index: -1; */
