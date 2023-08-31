@@ -1,3 +1,703 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Roboto:wght@300;400;500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+/* Start Header */
+.logo{
+    @apply text-black font-black text-2xl flex items-center justify-center h-12
+}
+.header{
+   @apply font-roboto
+}
+.navigation{
+    @apply 
+    text-center flex flex-col
+    mobile:p-4 mobile:gap-6 
+    tablet:text-sm tablet:flex-row tablet:justify-between 
+    laptop:text-base laptop:p-6
+    desktop:px-16 
+    4k:px-24;
+    @screen laptop{
+        box-shadow: 0px 12px 22px 0px rgba(0, 0, 0, 0.05);
+    }
+}
+.navigation__list{
+    @apply flex flex-col
+    items-center font-bold text-normalgray
+    mobile:gap-6
+    tablet:flex-row 
+}
+.navigation__link{
+    @apply border-b-2 border-white py-1 px-1  
+    hover:border-b-2 hover:border-primary hover:text-hardgray
+}
+.icon-menu{
+    @apply object-contain w-fit h-6 laptop:hidden;
+}
+
+/* End Header */
+
+/* Start Components */  
+    /* Pagination */
+    .pagination{
+        @apply flex flex-row gap-3 justify-center
+    }
+    .pagination .arrow-pagination{
+        @apply text-primary font-semibold
+    }
+    .pagination .arrow-pagination:disabled{
+        @apply text-hardgray
+    }
+    .paginate-number{
+        @apply text-lg 
+    }
+    .paginate-number:disabled{
+        @apply text-primaryactive font-semibold
+    }
+    
+    /* End Pagination */
+
+.btn{
+    @apply py-4 px-6 cursor-pointer
+    flex justify-center items-center w-fit
+    mobile:max-h-6  mobile:py-4 mobile:px-4
+    laptop:max-h-8 laptop:py-5 laptop:font-black laptop:text-base
+    ; 
+
+}
+.btn.pill{
+    @apply border border-primary 
+    font-medium rounded-3xl text-primary
+    laptop:border-2
+    hover:bg-primary hover:text-white hover:border-primary
+    active:bg-primaryactive active:text-white active:border-primaryactive
+}
+.btn.solid{
+    @apply  bg-primary border border-primary 
+    font-medium rounded-lg text-white
+    
+    hover:scale-105 hover:transition-transform 
+    active:bg-primaryactive active:text-white active:border-primaryactive
+}
+
+.tittleBanner{
+    @apply text-hardgray font-bold max-w-max  relative w-fit 
+    mobile:text-5xl mobile:leading-none
+    4k:text-7xl;
+}
+.section__title span:nth-child(1){
+    @apply block 
+}
+.section__title span:nth-child(1)::after{
+    content: '';
+    display: block;
+    height: 20%;
+    
+    position: absolute;
+    z-index: -1;
+    top: 35%;
+    @apply bg-primarylight w-full;
+}
+.section__title span:nth-child(2){
+    @apply text-primary 
+}
+.tittle{
+    @apply flex justify-center   px-2 pl-0 self-center max-w-max relative text-3xl font-bold text-normalgray 
+    tablet:text-4xl
+}
+.tittle::after{
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+   @apply bg-primary bottom-0 -mb-4
+}
+/* End Components */
+
+/* Main */
+.main{
+    @apply flex flex-col font-roboto ;
+}
+.section{
+    @apply py-4 
+    laptop:py-8;
+}
+/* End Main */
+/* Section  */
+/* Section Banner */
+.section-hero{
+    @apply relative;
+}
+.section-hero.blog{
+    /* @apply bg-lightgray */
+}
+.section--pageblog{
+     @apply bg-lightgray
+}
+.banner-base{
+    @apply absolute h-fit w-full bottom-0 -z-10;
+    /* transform: translateY(-100%); */
+}
+.banner__title{
+   
+}
+/* .section--banner{
+    background-image: url('../images/pages/base-hero.svg');
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat; 
+    @screen tablet {
+        background-position: center calc(100% + 20%); 
+    }
+} */
+.section--banner{
+    @apply p-4  flex flex-col gap-8 relative
+    mobile:items-center
+    tablet:px-6 tablet:py-16 tablet:flex-row tablet:justify-between
+    laptop:px-16 laptop:justify-between
+    4k:px-24
+    ;
+}
+.text-banner{
+    @apply flex justify-center items-center flex-col text-center gap-4
+    
+    tablet:text-left tablet:items-start;
+}
+.text-banner p{
+    @apply text-normalgray text-xl
+}
+.banner__call{
+    @apply self-center
+}
+.text-banner .btn{
+    @apply 
+    tablet:self-start
+}
+/* End Section Banner */
+/* Start Section Work */
+.section--work{
+    @apply  bg-lightgray flex justify-center;
+}
+.content--work{
+    @apply flex  justify-center px-10   
+   
+    mobile:flex-col mobile:gap-12 mobile:pb-8
+    tablet:px-14 tablet:gap-14  tablet:pb-16
+    laptop:px-12 laptop:w-10/12 laptop:gap-24 
+    4k:px-20 4k:gap-32   4k:w-11/12
+}
+.card .card__image{
+   @apply flex flex-col items-center justify-center 
+   mobile:w-full
+   laptop:py-4
+   4k:w-5/12 
+ ;
+}
+.card .card__image .image{
+    @apply max-h-full w-10/12 object-contain;
+}
+.cards__work{
+    counter-reset: item; 
+    @apply flex flex-col
+    mobile:gap-12
+    tablet:gap-20
+    laptop:gap-0    ;
+}
+.cards__work .card__content{
+    @apply flex gap-4 flex-col py-8  px-8 justify-between
+    tablet:flex-row 
+    laptop:py-0 
+    4k:h-72
+    ;
+    
+}
+@screen tablet{
+
+    .cards__work .card:nth-child(1){
+        @apply z-50;
+    }
+    .cards__work .card:nth-child(2){
+        @apply z-40;
+    }
+    .cards__work .card:nth-child(3){
+        @apply z-30;
+    }
+    .cards__work .card:nth-child(4){
+        @apply z-20;
+    }
+    .cards__work .card:not(.card:nth-child(1)){
+        @apply -mt-3;
+    }
+}
+
+
+.cards__work .card{
+    @apply flex gap-4 flex-row relative bg-white  rounded-xl
+    laptop:w-9/12 
+    ;
+    box-shadow: 0px 69px 120px 0px rgba(0, 0, 0, 0.08);
+}
+.cards__work .card{
+    @apply laptop:hover:z-50  transition-all;
+}
+
+.cards__work:hover .card:not(.card:hover){
+    @apply opacity-50
+}
+
+.cards__work .card:nth-child(even){
+    direction: rtl;
+    @apply self-end;
+}
+
+.cards__work .card:nth-child(even) .card__content{
+    direction: ltr;
+    @apply self-end;
+}
+.text__card{
+    @apply flex flex-col justify-center  gap-4 items-start 
+}
+.text__card .card__tittle{
+    @apply text-primary text-2xl font-bold
+}
+.text__card p{
+    @apply text-normalgray font-normal 
+    text-lg 
+}
+
+.cards__work .card::before{
+    content: '0'counter(item); 
+    position: absolute;
+    transform: translate(-40%, -70%);
+    @apply text-6xl  text-primarylight font-bold
+        laptop:text-8xl
+    ;
+    counter-increment: item; /* Incrementa el contador en 1 */
+ 
+}
+.cards__work .card:nth-child(even)::before{
+    transform: translate(40%, -70%);
+}
+/* End Section work */
+
+/* Section Email */
+.section--email{
+    @apply bg-primary
+}
+.content--email{
+    @apply flex flex-col py-24 px-4 gap-10
+    tablet:px-8
+    laptop:px-16 laptop:flex-row laptop:gap-16
+    4k:px-24  4k:gap-32
+    ;
+}
+.content--email .tittle{
+    @apply text-white text-3xl font-bold  
+    tablet:text-4xl 
+    laptop:text-left;
+}
+.content--email  .tittle::after{
+    @apply  top-0 -mt-4 w-4/12 left-0  ;
+
+    background: linear-gradient(90deg, #FFF 0%, rgba(255, 255, 255, 0.31) 100%);
+}
+/* .form input[type='email']{ */
+    /* Form contact */
+    .form--contact{
+        @apply flex flex-col gap-3
+    }
+    .form--contact input[type="text"], .form--contact input[type="email"], .form--contact textarea {
+        @apply outline-none text-normalgray text-base font-normal font-roboto rounded-md border border-bordergray w-full
+      }
+      .form--contact textarea{
+        @apply p-4
+      }
+      .form--contact .btn.solid{
+        @apply max-h-none
+        hover:scale-100
+      }
+    /* Ends form contact */
+.form--email{
+    @apply w-full 
+    laptop:w-5/12;
+}
+.form--email form{
+    @apply flex flex-col gap-4;
+}
+.form input{
+    @apply w-full outline-none py-2 px-4 rounded-3xl font-roboto h-14
+}
+.section--email .btn{
+    @apply w-full bg-primaryblue max-h-fit py-2 text-xl text-white h-14
+    hover:bg-bluehard hover:border-bluehard
+}
+
+/* End Section Email */
+
+/* Section Testimonios */
+.section--testimonial{
+    @apply bg-lightgray;
+}
+.content--testimonial{
+    @apply flex  justify-center px-10   py-24
+    mobile:flex-col mobile:gap-16 mobile:pb-8
+    tablet:px-14 tablet:gap-16  tablet:pb-16
+    laptop:px-12  laptop:gap-24 
+    4k:px-48 4k:gap-28 
+}
+.carousel-button-group{
+    @apply relative w-full
+    laptop:w-24 laptop:absolute laptop:right-10 laptop:-mt-9
+}
+.carousel-button-group .disable{
+    @apply hidden;
+}
+.carousel-button-group .react-multiple-carousel__arrow--left{
+    @apply bg-red-900
+}
+.carousel-button-group .react-multiple-carousel__arrow{
+    @apply flex justify-center items-center bg-transparent
+}
+.react-multiple-carousel__arrow:hover{
+    /* background: red !important; */
+    background: transparent !important;
+}
+.react-multiple-carousel__arrow::before{
+    content: "" !important;
+}
+.content--testimonials{
+    @apply relative w-full px-8 py-10 pb-12 rounded-lg
+    laptop:px-12 laptop:py-6 laptop:pb-10
+    desktop:px-20 desktop:py-12
+    4k:py-20 
+    ;
+    box-shadow: 0px 69px 114px 0px rgba(0, 0, 0, 0.08);
+}
+.testimonial{
+    @apply flex flex-col justify-center items-center gap-4
+    tablet:flex-row 
+    desktop:px-6 desktop:gap-8
+    ;
+}
+.testimonial__image{
+    @apply w-4/12 object-contain
+    laptop:w-4/12 
+    4k:w-1/6
+}
+.text-testimonial{
+    @apply flex flex-col gap-2
+}
+.text-testimonial p{
+    @apply text-normalgray font-normal 
+    text-lg
+    laptop:text-xl
+    ;
+}
+.text-testimonial h3{
+    @apply text-primary font-bold 
+    text-sm 
+    laptop:text-base;
+}
+/* End Section testimonios */
+
+/* Section Last Articles */
+.section--blog{
+    @apply bg-primary
+}
+.content--blog{
+    @apply flex flex-col py-12 px-4 gap-10 relative
+    tablet:px-8
+    laptop:px-16 laptop:flex-row laptop:justify-between laptop:w-full
+    4k:px-24 4k:flex-row 
+    
+    ;
+}
+.content--blog .tittle{
+    @apply text-white text-3xl font-bold  
+    tablet:text-4xl 
+    laptop:text-left  laptop:w-6/12
+}
+.content--blog  .tittle::after{
+    @apply  top-0 -mt-4 w-4/12 left-0 ;
+
+    background: linear-gradient(90deg, #FFF 0%, rgba(255, 255, 255, 0.31) 100%);
+}
+
+.blog-articles{
+    @apply laptop:w-6/12  ;
+}
+.blog-article{
+    @apply bg-primaryblue bg-opacity-70 rounded-3xl py-7 px-4
+}
+
+.item-carousel{
+    @apply pr-4 py-4 
+    laptop:py-16 laptop:cursor-move
+}
+.blog-article-testimonial{
+    @apply flex flex-col gap-3 mx-4 
+}
+.blog-article-testimonial h3{
+    @apply text-white font-semibold text-lg
+    laptop:text-2xl
+}
+.blog-article-testimonial p{
+    @apply text-white font-normal text-sm
+    laptop:text-base
+}
+/* End Section Lasts Articles */
+.section--blog .blog .solid{
+    @apply flex flex-row gap-6 font-bold mt-5 bg-white border-white text-black w-fit
+    active:bg-white active:text-black
+
+}
+/* Section About */
+.text-banner .section__title.about span:nth-child(1)::after{
+    @apply hidden;
+}
+.text-banner:nth-child(1){
+    @apply laptop:w-6/12
+}
+
+/* End Section about */
+
+/* Footer */
+.footer{
+    @apply bg-primary font-roboto
+}
+.footer .navigation{
+    @apply py-12 flex flex-col items-center
+    laptop:flex-row laptop:px-16
+    4k:px-24
+}
+.navigation .footer__list{
+    @apply flex flex-col gap-2 text-center  items-center
+    laptop:text-left laptop:items-start
+}
+.navigation .footer__list:nth-child(1){
+    @apply  laptop:w-6/12
+}
+.navigation .footer__list .logo{
+    @apply pb-5
+}
+.footer__list .navigation__link{
+    @apply border-transparent text-base border-0
+    hover:bg-transparent hover:border-0 hover:text-black hover:font-black
+}
+.footer__list .navigation__link.title{
+    @apply block text-black font-black pb-3
+}
+/* End Footer */
+
+/* Page Blog */
+.card--blog{
+    @apply flex flex-col gap-4 px-5 py-6 rounded-xl bg-white
+    desktop:px-12 desktop:py-16
+    ;
+    box-shadow: 0px 69px 120px 0px rgba(0, 0, 0, 0.08);
+}
+.card-body{
+    @apply text-base text-normalgray normal-case
+
+}
+.section--pageblog .content--blog{
+    @apply flex flex-col
+}
+.grid-blog{
+    @apply grid items-center w-full justify-center
+    mobile:grid-cols-1 
+    tablet:grid-cols-2 
+    desktop:grid-cols-3 
+    4k:grid-cols-3    
+    gap-8
+}
+.section-hero.audit {
+    @apply bg-lightgray pb-12 
+}
+.section-hero.audit .section--banner .banner-base{
+    @apply z-20
+}
+.section-hero .grid-blog{
+    @apply grid -mb-8   items-center w-full justify-center px-4 
+    mobile:grid-cols-1 
+    tablet:grid-cols-2 
+    desktop:flex desktop:justify-center desktop:gap-16 desktop:-mt-16  desktop:px-6
+    gap-8 desktop:pb-24
+}
+.section-hero .section--banner .banner-base{
+    @apply  bottom-0  left-0
+    desktop:-bottom-20;
+}
+
+.section-hero .grid-blog .card{
+    @apply flex flex-col z-50 gap-4 px-5 py-6 rounded-xl bg-white
+    desktop:px-12 desktop:py-16
+    ;
+    box-shadow: 0px 69px 120px 0px rgba(0, 0, 0, 0.08);
+}
+
+.section-hero .grid-blog .card .card-header{
+   @apply text-primary text-2xl
+}
+.section-hero .grid-blog .card:nth-child(1){
+    @apply 
+    desktop:max-w-sm
+}
+.section-hero .grid-blog .card:nth-child(2){
+    @apply 
+    desktop:max-w-2xl
+}
+.industries .content--blog .grid-blog{
+    @apply  flex flex-col  laptop:flex-row
+}
+
+.industries .content--blog .grid-blog .card--specialitst{
+    @apply max-w-sm 
+}
+
+.grid-blog:hover .card:not(.card:hover){
+    @apply bg-opacity-10
+}
+.grid-blog .card .card-header{
+    @apply text-hardgray font-black text-xl pb-2
+}
+.grid-blog .card--specialitst .card-header{
+    @apply flex flex-col gap-2 items-center text-hardgray font-black text-xl pb-2
+}
+/* End Page Blog */
+/* Start Specialists */
+.card--specialitst{
+    @apply flex flex-col gap-4 px-5 py-6 rounded-xl bg-white
+    items-center
+    ;
+    box-shadow: 0px 69px 120px 0px rgba(0, 0, 0, 0.08);
+}
+.card--specialitst .card-footer{
+    @apply w-full
+}
+.card--specialitst .card-footer .btn{
+    @apply w-full px-4
+}
+/* End Page Specialists */
+
+/* Page Services */
+.section--services{
+    @apply bg-lightgray
+}
+.grid-blog.service{
+    @apply 
+    relative
+    desktop:grid-cols-2 desktop:items-end desktop:w-10/12
+    desktop:gap-12; 
+}
+.card--service{
+    @apply relative flex flex-col gap-4 px-5 py-6 rounded-xl bg-white
+    desktop:px-12 desktop:py-16
+    ;
+    box-shadow: 0px 69px 120px 0px rgba(0, 0, 0, 0.08);
+}
+.card--service:nth-child(even){
+    @screen desktop{
+        transform: translateY(25%)
+    }
+}
+.section--services .content--blog{
+    @apply justify-center 
+    desktop:pb-32
+}
+/* Section contrato */
+.section--contrato{
+    @apply bg-primary
+}
+.content-contrato{
+    @apply flex  justify-center px-10 text-white
+    text-center 
+   
+    mobile:flex-col mobile:gap-8 mobile:pb-8 
+    tablet:px-14 tablet:gap-8  tablet:pb-16 laptop:py-8
+    laptop:px-12 laptop:gap-8 
+    4k:px-20 4k:gap-16  
+}
+.content-contrato h2{
+    @apply  text-3xl font-bold;
+}
+/* End Section Contrato */
+.content--contact{
+    @apply flex flex-col py-4 justify-center px-10 text-white
+    text-center    
+    mobile:gap-12 mobile:pb-8
+    tablet:px-14 tablet:gap-12  tablet:pb-16
+    laptop:px-12 laptop:gap-12 laptop:flex-row laptop:pt-14
+    4k:px-20 4k:gap-32  
+}
+.card--contact{
+    @apply flex flex-col rounded-xl border-t-4 border-t-primary   justify-center px-10 text-white
+    text-center    
+    mobile:gap-12 mobile:pb-8 mobile:py-12
+    tablet:px-14 tablet:gap-12  tablet:pb-16
+    laptop:px-12 laptop:gap-12 laptop:flex-row
+    4k:px-20 4k:gap-32  ;
+    box-shadow: 0px  69px 114px 0px rgba(0, 0, 0, 0.05);
+}
+.contact--text{
+    @apply flex flex-col gap-8 justify-center items-center 
+    laptop:w-6/12
+
+    desktop:justify-start desktop:items-start
+}
+.contact--text .tittle{
+    @apply laptop:text-left
+}
+.items--social{
+    @apply flex gap-2
+}
+.form--contact{
+    @apply 
+    laptop:w-6/12
+}
+/* Section Contacto */
+
+/* End Section contacto */
+
+
+/* End Page Services */
+
+/* Page About */
+    /* Section about */
+    .section--about{
+        @apply bg-lightgray ;
+    }
+    .content--about{
+        @apply flex  justify-center px-10 text-normalgray
+        text-center 
+       
+        mobile:flex-col mobile:gap-12 mobile:pb-8 
+        tablet:px-14 tablet:gap-8  tablet:pb-16 laptop:py-8
+        laptop:px-12 laptop:gap-0 
+        4k:px-20 4k:gap-0  
+    }
+    .content--about h2{
+        @apply text-black text-2xl font-black
+        desktop:text-4xl
+    }
+    .card--about{
+        @apply flex flex-col-reverse gap-2  items-center
+        desktop:flex-row desktop:gap-10 desktop:text-justify
+    } 
+    .content--about .card--about:nth-child(odd){
+        @apply        desktop:flex-row-reverse
+    }
+    .card--about p{
+        @apply desktop:w-7/12
+    }
+    /* End Section about */
+/* End Page about */
+
+.none{
+    @apply hidden;
+}
