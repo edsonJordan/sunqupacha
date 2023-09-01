@@ -69,7 +69,7 @@ const SectionLastsBlogs = (props: Props) => {
                     <p>
                     sunqupacha helped us with our digital marketing for 4 months now and still helps us. Great service and highly recommended.
                     </p>
-                    <a className="btn solid" href="#">
+                    <a className="btn solid " href="#">
                       Leer Mas
                       <SmallArrow/>
                     </a>

@@ -5,9 +5,11 @@ const Footer: React.FC = () => {
     <footer className='footer' >   
         <div className='navigation'>  
             <ul className='footer__list'>
+                <li>
                 <a className='logo' href="#">
                     SunquPacha
                 </a>
+                </li>
                 <li>
                     <a className='navigation__link' href="#">Servicios</a>
                 </li>

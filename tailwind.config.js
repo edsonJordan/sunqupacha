@@ -22,7 +22,7 @@ module.exports = {
     extend: {
       colors:{
         'primaryactive':'#038AC0',
-        'primary':'#1FABE2',
+        'primary':'#197CCD',
         'primarylight':'#D2EEF9',
         'primaryblue':'#197CCD',
         'bluehard':'#0160AE',
@@ -30,6 +30,7 @@ module.exports = {
         'normalgray':'#616A76',
         'lightgray':'#FAFAFA',
         'bordergray':'#C8C8C8',
+        'oldprimary':'#2FABE3'
       },
       fontFamily:{
         roboto:['roboto']

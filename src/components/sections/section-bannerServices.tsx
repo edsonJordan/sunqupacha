@@ -12,7 +12,7 @@ const SectionBannerServices= (props: Props) => {
             <span>Servicios</span>
             </h1>
             <p>
-              Todos nuestros servicios de marketing digital comienzan con una llamada de consulta gratuita de 30 minutos donde encontramos la mejor estrategia para alcanzar sus objetivos.
+              Estamos comprometidos con el éxito digital de los emprendedores en Perú. Ofrecemos una amplia gama de servicios diseñados para elevar tu presencia en línea y llevar tu negocio al siguiente nivel.
             </p>
             <a  className="btn solid banner__call" href="#">Contactanos</a>
           </div>

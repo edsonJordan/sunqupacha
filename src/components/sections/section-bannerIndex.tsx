@@ -12,10 +12,12 @@ const SectionBannerIndex = (props: Props) => {
     <div className="section__content section--banner">
       <div className="text-banner">
         <h1 className="section__title tittleBanner ">
-        <span>Te ayudamos a aumentar </span> tus <span>conversiones.</span>
+          {/* Desarrollo Web Profesional   */}
+          <span>Agencia de Desarrollo   </span> Web <span>   en Perú.</span>
+        {/* <span> Desarrollo Web Profesional </span>en<span>  Perú.</span> */}
         </h1>
         <p>
-          Destacado en las principales publicaciones de todo el mundo.
+        Transformamos tus ideas en sitios web impactantes aplicando estrategias digitales sólidas. Refuerza tu presencia en línea y alcanza tus objetivos con nosotros.
         </p>
         <a  className="btn solid banner__call" href="#">Contactanos</a>
       </div>

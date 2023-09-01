@@ -10,11 +10,15 @@ const Header: React.FC = () => {
         <nav className='navigation'>  
             <div className='flex items-center justify-between'>
             <Link className='logo' to="/">
-                <Logo className=" h-full w-full"/>
+                <Logo className=" h-full w-full" alt="Logo SunquPacha"/>
+                SunquPacha
             </Link>
                 <Amburguesa onClick={()=>{setStatusMenu(!statusMenu)}}  className="icon-menu "/>
             </div>
             <ul className={statusMenu ? "navigation__list ":"navigation__list none"}>
+                <li>
+                    <Link className='navigation__link' to="/">Inicio</Link>
+                </li>
                 <li>
                     <Link className='navigation__link' to="/servicios">Servicios</Link>
                 </li>
@@ -28,8 +32,9 @@ const Header: React.FC = () => {
                     <Link className='navigation__link' to="/blog">Blog</Link>
                 </li>
                 <li>
-                    <Link className='btn pill' to="/contacto">Contáctenos</Link>
+                    <Link className='btn pill' to="/contacto">Contactanos</Link>
                 </li>
+                
             </ul>
         </nav>
     </header>

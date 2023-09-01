@@ -12,7 +12,9 @@ const SectionWhySunqupacha = (props: Props) => {
               ¿Por qué SunquPacha?
             </h2>
             <p>
-              Para conseguir clientes, es imperativo ser visto por la masa. Cada empresa exitosa es única y necesita estrategias de marketing digital contrastantes. Reserva una reunión con nosotros y te ayudaremos a encontrar la estrategia correcta para tu empresa
+            Impulsamos el éxito de emprendedores peruanos mediante soluciones digitales de impacto. Con una década de experiencia, comprendemos tus desafíos y aspiraciones.<br/> 
+            Nos distingue la excelencia y el profesionalismo.Creamos sitios web potentes y estrategias efectivas para tu crecimiento. <br/>
+            Nuestro equipo tiene pasión por la innovación digital. Acompañamos tu viaje hacia nuevas alturas en el mundo en línea. Tu éxito es nuestra misión.
             </p>
             <a  className="btn solid banner__call" href="#">Contactanos</a>
           </div>

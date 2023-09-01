@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Roboto:wght@300;400;500;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +7,7 @@
 
 /* Start Header */
 .logo{
-    @apply text-black font-black text-2xl flex items-center justify-center h-12
+    @apply text-primary flex  font-black text-2xl flex-row gap-1 items-center justify-center h-12
 }
 .header{
    @apply font-roboto
@@ -36,7 +35,7 @@
     hover:border-b-2 hover:border-primary hover:text-hardgray
 }
 .icon-menu{
-    @apply object-contain w-fit h-6 laptop:hidden;
+    @apply object-contain w-fit h-6 tablet:hidden;
 }
 
 /* End Header */
@@ -70,14 +69,14 @@
 
 }
 .btn.pill{
-    @apply border border-primary 
-    font-medium rounded-3xl text-primary
+    @apply border border-bluehard  
+    font-semibold tracking-wide	 rounded-3xl text-bluehard
     laptop:border-2
     hover:bg-primary hover:text-white hover:border-primary
     active:bg-primaryactive active:text-white active:border-primaryactive
 }
 .btn.solid{
-    @apply  bg-primary border border-primary 
+    @apply  bg-bluehard tracking-wide border border-bluehard 
     font-medium rounded-lg text-white
     
     hover:scale-105 hover:transition-transform 
@@ -93,14 +92,14 @@
     @apply block 
 }
 .section__title span:nth-child(1)::after{
-    content: '';
+ /*    content: '';
     display: block;
     height: 20%;
     
     position: absolute;
     z-index: -1;
     top: 35%;
-    @apply bg-primarylight w-full;
+    @apply bg-primarylight w-full; */
 }
 .section__title span:nth-child(2){
     @apply text-primary 
@@ -333,7 +332,7 @@
     @apply w-full outline-none py-2 px-4 rounded-3xl font-roboto h-14
 }
 .section--email .btn{
-    @apply w-full bg-primaryblue max-h-fit py-2 text-xl text-white h-14
+    @apply w-full bg-bluehard max-h-fit py-2 text-xl text-white h-14
     hover:bg-bluehard hover:border-bluehard
 }
 
@@ -341,7 +340,7 @@
 
 /* Section Testimonios */
 .section--testimonial{
-    @apply bg-lightgray;
+    @apply bg-white;
 }
 .content--testimonial{
     @apply flex  justify-center px-10   py-24
@@ -376,7 +375,7 @@
     desktop:px-20 desktop:py-12
     4k:py-20 
     ;
-    box-shadow: 0px 69px 114px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 20px 114px 0px rgba(0, 0, 0, 0.15);
 }
 .testimonial{
     @apply flex flex-col justify-center items-center gap-4
@@ -399,7 +398,7 @@
     ;
 }
 .text-testimonial h3{
-    @apply text-primary font-bold 
+    @apply text-bluehard font-bold 
     text-sm 
     laptop:text-base;
 }
@@ -410,7 +409,7 @@
     @apply bg-primary
 }
 .content--blog{
-    @apply flex flex-col py-12 px-4 gap-10 relative
+    @apply flex flex-col py-12 gap-10 relative
     tablet:px-8
     laptop:px-16 laptop:flex-row laptop:justify-between laptop:w-full
     4k:px-24 4k:flex-row 
@@ -432,7 +431,7 @@
     @apply laptop:w-6/12  ;
 }
 .blog-article{
-    @apply bg-primaryblue bg-opacity-70 rounded-3xl py-7 px-4
+    @apply bg-white  rounded-3xl py-7 
 }
 
 .item-carousel{
@@ -443,16 +442,16 @@
     @apply flex flex-col gap-3 mx-4 
 }
 .blog-article-testimonial h3{
-    @apply text-white font-semibold text-lg
+    @apply text-hardgray font-semibold text-lg
     laptop:text-2xl
 }
 .blog-article-testimonial p{
-    @apply text-white font-normal text-sm
+    @apply text-normalgray font-normal text-sm
     laptop:text-base
 }
 /* End Section Lasts Articles */
 .section--blog .blog .solid{
-    @apply flex flex-row gap-6 font-bold mt-5 bg-white border-white text-black w-fit
+    @apply flex flex-row gap-2 font-semibold mt-5 rounded-none bg-white border-0  border-black  text-black w-fit
     active:bg-white active:text-black
 
 }
@@ -486,11 +485,11 @@
     @apply pb-5
 }
 .footer__list .navigation__link{
-    @apply border-transparent text-base border-0
-    hover:bg-transparent hover:border-0 hover:text-black hover:font-black
+    @apply border-transparent text-base font-medium border-0 text-black
+    hover:bg-transparent hover:border-0 hover:text-black hover:font-medium
 }
 .footer__list .navigation__link.title{
-    @apply block text-black font-black pb-3
+    @apply block text-black font-black pb-3 text-2xl
 }
 /* End Footer */
 
