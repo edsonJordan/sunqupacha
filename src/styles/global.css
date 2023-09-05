@@ -122,6 +122,7 @@
 .main{
     @apply flex flex-col font-roboto ;
 }
+
 .section{
     @apply py-4 
     laptop:py-8;
@@ -405,10 +406,10 @@
 /* End Section testimonios */
 
 /* Section Last Articles */
-.section--blog{
+.section--lastblog{
     @apply bg-primary
 }
-.content--blog{
+.content--lastblog{
     @apply flex flex-col py-12 gap-10 relative
     tablet:px-8
     laptop:px-16 laptop:flex-row laptop:justify-between laptop:w-full
@@ -416,12 +417,12 @@
     
     ;
 }
-.content--blog .tittle{
+.content--lastblog .tittle{
     @apply text-white text-3xl font-bold  
     tablet:text-4xl 
     laptop:text-left  laptop:w-6/12
 }
-.content--blog  .tittle::after{
+.content--lastblog  .tittle::after{
     @apply  top-0 -mt-4 w-4/12 left-0 ;
 
     background: linear-gradient(90deg, #FFF 0%, rgba(255, 255, 255, 0.31) 100%);
@@ -450,7 +451,7 @@
     laptop:text-base
 }
 /* End Section Lasts Articles */
-.section--blog .blog .solid{
+.section--lastblog .blog .solid{
     @apply flex flex-row gap-2 font-semibold mt-5 rounded-none bg-white border-0  border-black  text-black w-fit
     active:bg-white active:text-black
 
@@ -504,11 +505,11 @@
     @apply text-base text-normalgray normal-case
 
 }
-.section--pageblog .content--blog{
+.section--pageblog .content--lastblog{
     @apply flex flex-col
 }
 .grid-blog{
-    @apply grid items-center w-full justify-center
+    @apply grid items-start w-full justify-center
     mobile:grid-cols-1 
     tablet:grid-cols-2 
     desktop:grid-cols-3 
@@ -551,11 +552,11 @@
     @apply 
     desktop:max-w-2xl
 }
-.industries .content--blog .grid-blog{
+.industries .content--lastblog .grid-blog{
     @apply  flex flex-col  laptop:flex-row
 }
 
-.industries .content--blog .grid-blog .card--specialitst{
+.industries .content--lastblog .grid-blog .card--specialitst{
     @apply max-w-sm 
 }
 
@@ -605,7 +606,7 @@
         transform: translateY(25%)
     }
 }
-.section--services .content--blog{
+.section--services .content--lastblog{
     @apply justify-center 
     desktop:pb-32
 }
@@ -696,7 +697,101 @@
     }
     /* End Section about */
 /* End Page about */
+/* Page Article blog */
+.content--blog{
+    @apply  relative flex flex-col py-10 px-4 gap-5
+    tablet:px-8
+    laptop:px-16 laptop:py-14  laptop:gap-8
+    
+    4k:px-24;
+    
+}
+.main--blog{
+    @apply flex flex-col   gap-10
+    desktop:flex-row;
+}
 
+.table-of-contents{
+    /* box-shadow:  0px 0px 120px 0px rgba(0, 0, 0, 0.09); */
+    @apply  bg-bgprimary w-fit rounded-2xl py-2 px-3 pr-3  
+    tablet:py-10  tablet:px-8 tablet:pr-10 tablet:max-w-md 
+    desktop:top-8 desktop:h-fit desktop:sticky 
+    ;
+}
+.table-of-contents .tittle-table{
+    @apply  text-3xl font-black text-bluehard py-4
+}
+.table-of-contents-item {
+    @apply py-2 text-bluehard text-base 
+    hover:underline
+}
+.table-of-contents-item.h2{
+    @apply pb-2  text-base  font-bold
+}
+.table-of-contents-item.h3{
+    @apply pb-2 pl-4 text-base font-normal
+}
+.table-of-contents-item.h4{
+    @apply pb-2 pl-6
+}
+.article-blog{
+    @apply flex flex-col gap-4 max-w-3xl
+}
+.article-blog .tittle{
+    @apply mb-4  text-bluehard
+}
+.article-blog .tittle::after{
+    @apply hidden 
+}
+.content-blog p  strong{
+    @apply text-bluehard
+}
+.content-blog p {
+    @apply text-normalgray
+}
+.content-blog p a{
+    @apply text-bluehard hover:underline
+}
+.content-blog h2{
+    @apply pt-9 text-bluehard font-semibold text-2xl pb-3
+}
+
+.content-blog h3{
+    @apply pt-3 pl-6 text-bluehard font-medium text-xl pb-1
+}
+.content-blog h3  ~ p{
+    @apply pl-6
+}
+.content-blog h3 p{
+    @apply pl-0;
+}
+.content-blog ~ h2 ~   p:nth-child(1){
+    @apply pl-0 bg-red-500;
+}
+.info-blog{
+    @apply flex flex-wrap text-sm gap-4 flex-shrink items-center text-bluehard font-medium
+}
+.tags-blog{
+    @apply flex flex-row gap-2
+}
+.tag-blog{
+    @apply bg-blue-100 font-normal   w-fit px-3 py-1 rounded-xl 
+}
+.breadcrumbs{
+    @apply text-bluehard flex gap-4
+}
+.breadcrumbs-item:last-child{
+    @apply font-bold
+}
+.breadcrumbs-item::before{
+    content: "/";
+    position:relative;
+    right: 6px;
+}
+.breadcrumbs-item:first-child::before{
+    content: "";
+}
+/* End  Article blog */
 .none{
     @apply hidden;
 }

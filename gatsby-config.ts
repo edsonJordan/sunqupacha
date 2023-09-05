@@ -6,7 +6,7 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `My Gatsby Site`,
+    title: `SunquPacha`,
     siteUrl: `https://sunqupacha.com`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -14,6 +14,22 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://sunqupacha.com/',
+        sitemap: 'https://sunqupacha.com/sitemap.xml',
+        env: {
+          development: {
+            policy: [{userAgent: '*', disallow: ['/']}]
+          },
+          production: {
+            policy: [{userAgent: '*', allow: '/'}]
+          }
+        }
+      }
+    }
+    ,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -49,6 +65,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
         pixelId: "635580070875733",
+        
       },
     },
     {

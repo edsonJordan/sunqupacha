@@ -4,6 +4,7 @@ interface PaginatedData<T> {
   }
   
   export const paginate = <T>(items: T[], itemsPerPage: number, currentPage: number): PaginatedData<T> => {
+    
     const lastIndex = currentPage * itemsPerPage;
     const firstIndex = lastIndex - itemsPerPage;
     const currentItems = items.slice(firstIndex, lastIndex);

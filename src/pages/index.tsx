@@ -41,5 +41,5 @@ export const Head: HeadFC = () =>
 <>
 <title>Home Page</title>
   <html lang="es" />
-  <meta http-equiv="cache-control" content="public, max-age=604800, immutable" />
+  {/* <meta http-equiv="cache-control" content="public, max-age=604800, immutable" /> */}
 </>

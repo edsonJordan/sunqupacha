@@ -30,7 +30,8 @@ module.exports = {
         'normalgray':'#616A76',
         'lightgray':'#FAFAFA',
         'bordergray':'#C8C8C8',
-        'oldprimary':'#2FABE3'
+        'oldprimary':'#2FABE3',
+        'bgprimary':'#F3F8FD'
       },
       fontFamily:{
         roboto:['roboto']

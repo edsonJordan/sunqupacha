@@ -19,47 +19,40 @@ const itemsPerPage = 5;
 
 
  
-const SectionGridBlog = (props: Props) => {
+const SectionGridBlogCategories = (props: Props) => {
   const [items, setItems] = useState<Item[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
 
   const dataPosts = useStaticQuery(graphql`
-    {
-      allWpPost {
-        nodes {
-          id
-          slug
-          excerpt
-          title
-          author {
-            node {
-              firstName
-              username
-            }
-          }
-          date(formatString: "D MMM, YYYY")
-          seo {
-            readingTime
-          }
-        }
-      }
-    }
+  {
+    allWpCategory{
+       nodes{
+         name
+         slug
+         uri
+         description
+         
+       }
+     }
+   }
   `);
   useEffect(() => {
     // Simulated API call to fetch items
-    setItems(dataPosts.allWpPost.nodes);
+    setItems(dataPosts.allWpCategory.nodes);
 
   }, []);
-  console.log(dataPosts.allWpPost);
+  // console.log(dataPosts.allWpCategory);
   
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
 
   const { data: currentItems, totalPages } = paginate(items, itemsPerPage, currentPage);
+ 
+  const urlWeb : string | undefined = process.env.SITE_URL;
 
-
+  
   return (
     <section className="section section--pageblog">
         <div className="content content--lastblog">   
@@ -69,15 +62,15 @@ const SectionGridBlog = (props: Props) => {
                   <div className="card-header">
 
                     <h2 className="">
-                      {item.title}
+                      {item.name}
                     </h2>                    
                   </div>
                   <div className="card-body">
-                  <p   dangerouslySetInnerHTML={{ __html: item.excerpt }}/>
+                  {/* <p   dangerouslySetInnerHTML={{ __html: item.excerpt }}/> */}
                    
                   </div>
                   <div className="card-footer">
-                    <a href={`${item.slug}`} className="btn pill">
+                    <a href={`${urlWeb}/categoria/${item.slug}`} className="btn pill">
                       ver mas
                     </a>
                   </div>
@@ -90,4 +83,4 @@ const SectionGridBlog = (props: Props) => {
   )
 }
 
-export default SectionGridBlog
+export default SectionGridBlogCategories

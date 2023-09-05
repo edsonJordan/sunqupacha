@@ -10,7 +10,7 @@ type Props = {}
 const SectionGridServices = (props: Props) => {
   return (
     <section className="section section--services">
-        <div className="content content--blog ">
+        <div className="content content--lastblog ">
           <div className="grid-blog service">
             <div className="card card--service">
               <div className="card-header">

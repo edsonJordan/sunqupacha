@@ -44,7 +44,7 @@ const Industries: React.FC = () => {
           />
     </section>
     <section className="section section--pageblog industries">
-      <div className="content content--blog">   
+      <div className="content content--lastblog">   
         <div className="grid-blog">
               <article className="card card--specialitst">
                 <div className="card-header">

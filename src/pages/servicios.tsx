@@ -26,14 +26,13 @@ const Specialists: React.FC = () => {
       <div className="content content-contrato">
           <h2>¿Qué sucede cuando contrato SunquPacha?</h2>
           <p>
-          Cuando contratas a sunqupacha, obtienes un 
-          equipo de marketing digital externo que impulsa 
-          todo tu marketing digital hacia resultados medibles. 
-          La estrategia de marketing que diseñamos se basa en las 
-          necesidades y objetivos comerciales de su empresa, y mantenemos 
-          un diálogo continuo para mantenernos actualizados. El trabajo se 
-          planifica cada tres meses y lo lleva a cabo un director de proyecto 
-          de sunqupacha. Los especialistas que forman parte del equipo se ajustan cuando es necesario, en función de cuál es el enfoque. Contamos con especialistas en la mayoría de los aspectos del marketing digital y nos aseguramos de que siempre tenga acceso a la experiencia que necesita para tener éxito. El punto de partida de todo el trabajo son sus objetivos comerciales, que se traducen en cifras clave que medimos y le informamos. De esta manera, obtiene un seguimiento que tiene una conexión clara con lo que usted y la empresa desean obtener de la inversión que realiza en nosotros. Obtienes todo esto a un precio fijo mensual que corresponde aproximadamente a un empleado.
+          Cuando decides trabajar con SunquPacha, estás eligiendo el camino hacia el éxito en línea como emprendedor peruano. Nuestro enfoque abarca desde la contratación hasta la entrega del producto, y más allá, para asegurarte una experiencia integral y beneficiosa.
+
+          Desde el momento en que decides unirte a nosotros, te convertimos en una prioridad. Escuchamos tus objetivos y desafíos específicos, y diseñamos estrategias personalizadas que se adapten a tus necesidades. Trabajamos incansablemente para convertir tus ideas en realidad digital, creando sitios web impactantes y aplicando estrategias digitales sólidas.
+
+          Pero no te dejamos solo después de la entrega. Continuamos acompañándote, brindando soporte y ajustando estrategias para asegurarnos de que tu éxito en línea sea sostenible. Obtendrás resultados medibles y tangibles: tu presencia en línea se fortalecerá, tu audiencia crecerá y tu negocio prosperará.
+
+          En SunquPacha, estamos aquí para hacerte sobresalir en el competitivo mundo digital y llevarte a donde deseas estar. Tu éxito es nuestra misión, y nuestro enfoque es tu crecimiento continuo
           </p>
       </div>
     </section>

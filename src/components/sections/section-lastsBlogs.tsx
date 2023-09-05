@@ -33,8 +33,8 @@ const responsiveBlog = {
 
 const SectionLastsBlogs = (props: Props) => {
   return (
-    <section className="section section--blog ">
-        <div className="content content--blog">
+    <section className="section section--lastblog ">
+        <div className="content content--lastblog">
           <h2 className="tittle">
             Publicidad digital Artículos
           </h2>

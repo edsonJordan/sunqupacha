@@ -121,7 +121,7 @@ const SectionGridSpecialists = (props: Props) => {
 
   return (
   <section className="section section--pageblog">
-      <div className="content content--blog">   
+      <div className="content content--lastblog">   
         <div className="grid-blog">
           {items.map((item) => (
               <article className="card card--specialitst" key={item.id}>
