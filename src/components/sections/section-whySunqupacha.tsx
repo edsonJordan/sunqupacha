@@ -1,5 +1,6 @@
 import React from 'react'
 import HeroBanner2 from "./../../images/pages/hero-banner-2.svg";
+import CtaForm from '../cta/ctaForm';
 
 type Props = {}
 
@@ -16,7 +17,7 @@ const SectionWhySunqupacha = (props: Props) => {
             Nos distingue la excelencia y el profesionalismo.Creamos sitios web potentes y estrategias efectivas para tu crecimiento. <br/>
             Nuestro equipo tiene pasión por la innovación digital. Acompañamos tu viaje hacia nuevas alturas en el mundo en línea. Tu éxito es nuestra misión.
             </p>
-            <a  className="btn solid banner__call" href="#">Contactanos</a>
+            <CtaForm/>
           </div>
           <div className="flex justify-center">
             <HeroBanner2 

@@ -1,6 +1,7 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
-
+import {  graphql, useStaticQuery } from "gatsby";
+import { SeoStatic } from '../components/sections/seoStatic';
 
 
 
@@ -8,9 +9,10 @@ import type { HeadFC, PageProps } from "gatsby"
 import Header from "./../components/sections/header";
 import Footer from "./../components/sections/footer";
 
-
 import About1 from "./../images/pages/about1.svg";
 import About2 from "./../images/pages/about2.svg";
+
+
 //Sections 
 import SectionBannerAbout from "../components/sections/section-bannerAbout";
 import SectionContactEmail from "../components/sections/section-contactEmail";
@@ -75,5 +77,61 @@ const About: React.FC<PageProps> = () => {
 }
 
 export default About
+export const Head: HeadFC = () => {
+  const imagesPage = useStaticQuery(graphql`
+  query {
+    logoSectionImage: allFile(
+      filter: {
+        extension: { regex: "/(png)/" }
+        absolutePath: { regex: "/images/pages/" }
+        name: { eq: "logo-section" }
+      }
+    ) {
+      nodes {
+        name
+        childImageSharp {
+          fluid(maxWidth: 915, quality: 70) {
+            aspectRatio
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+    
+    logoImage: allFile(
+      filter: {
+        extension: { regex: "/(png)/" }
+        absolutePath: { regex: "/images/" }
+        name: { eq: "logo" }
+      }
+    ) {
+      nodes {
+        name
+        childImageSharp {
+          fluid(maxWidth: 915, quality: 70) {
+            aspectRatio
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  }
+`);
+  const imagenSection = imagesPage.logoSectionImage.nodes[0].childImageSharp.fluid.src;
+  const imagenLogo = imagesPage.logoImage.nodes[0].childImageSharp.fluid.src;
+  return (
+  <SeoStatic 
+      title={"Nosotros - SunquPacha"}
+      metaDesc="Consistencia, Impulso, Innovación y Pasión en un mundo digital competitivo. Mantén la cima y conecta con tu audiencia."
+      titleSection="Servicios"
+      opengraphDescription="Consistencia, Impulso, Innovación y Pasión en un mundo digital competitivo. Mantén la cima y conecta con tu audiencia."
+      ogimage={imagenSection}
+      tittleTwitter="Diseño Web Creativo en Perú"
+      metaTwitter="Servicios de diseño web y marketing digital en Perú. Transformamos tus ideas en sitios web impactantes y aplicamos estrategias efectivas para tu éxito en línea."
+      logoImage={imagenLogo}
+      canonical="/industrias"
+  >
+    </SeoStatic>
 
-export const Head: HeadFC = () => <title>Home Page</title>
+  )
+}

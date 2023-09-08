@@ -12,7 +12,7 @@ const SectionBannerAbout = (props: Props) => {
       <div className="section__content section--banner">
         <div className="text-banner">
           <h1 className="section__title tittleBanner ">
-          <span>Consistencia - Impulso - Curiosidad - Pasión</span>
+          <span>Consistencia - Impulso - Innovación - Pasión</span>
           </h1>
           <p>
             En un mundo digital competitivo y en constante evolución, es imperativo mantenerse en la cima y estar informado, ser muy visible entre los resultados de búsqueda y los feeds, y ser receptivo a su audiencia.

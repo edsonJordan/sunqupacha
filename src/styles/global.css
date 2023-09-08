@@ -25,10 +25,15 @@
     }
 }
 .navigation__list{
-    @apply flex flex-col
+    @apply hidden flex-col
     items-center font-bold text-normalgray
     mobile:gap-6
+    
     tablet:flex-row 
+    tablet:flex
+}
+.navigation__list.active{
+    @apply flex
 }
 .navigation__link{
     @apply border-b-2 border-white py-1 px-1  
@@ -238,7 +243,9 @@
 
 .cards__work .card{
     @apply flex gap-4 flex-row relative bg-white  rounded-xl
+    tablet:py-6
     laptop:w-9/12 
+    4k:py-0
     ;
     box-shadow: 0px 69px 120px 0px rgba(0, 0, 0, 0.08);
 }
@@ -410,10 +417,10 @@
     @apply bg-primary
 }
 .content--lastblog{
-    @apply flex flex-col py-12 gap-10 relative
+    @apply flex flex-col px-8 py-12 gap-10 relative
     tablet:px-8
-    laptop:px-16 laptop:flex-row laptop:justify-between laptop:w-full
-    4k:px-24 4k:flex-row 
+    laptop:px-16 laptop:pr-0 laptop:flex-row laptop:justify-between laptop:w-full
+    4k:px-24  4k:pr-0 4k:flex-row 
     
     ;
 }
@@ -612,7 +619,7 @@
 }
 /* Section contrato */
 .section--contrato{
-    @apply bg-primary
+    @apply bg-bluehard
 }
 .content-contrato{
     @apply flex  justify-center px-10 text-white
@@ -627,6 +634,9 @@
     @apply  text-3xl font-bold;
 }
 /* End Section Contrato */
+.section--contact{
+    @apply bg-lightgray
+}
 .content--contact{
     @apply flex flex-col py-4 justify-center px-10 text-white
     text-center    
@@ -637,28 +647,42 @@
 }
 .card--contact{
     @apply flex flex-col rounded-xl border-t-4 border-t-primary   justify-center px-10 text-white
-    text-center    
+    text-center 
     mobile:gap-12 mobile:pb-8 mobile:py-12
     tablet:px-14 tablet:gap-12  tablet:pb-16
     laptop:px-12 laptop:gap-12 laptop:flex-row
-    4k:px-20 4k:gap-32  ;
-    box-shadow: 0px  69px 114px 0px rgba(0, 0, 0, 0.05);
+    4k:px-10 4k:w-7/12 4k:gap-32  ;
+    box-shadow: 0px  69px 114px 0px rgba(0, 0, 0, 0.09);
 }
 .contact--text{
     @apply flex flex-col gap-8 justify-center items-center 
-    laptop:w-6/12
+    laptop:w-10/12
 
     desktop:justify-start desktop:items-start
 }
 .contact--text .tittle{
-    @apply laptop:text-left
+    @apply laptop:text-left laptop:self-start
 }
 .items--social{
-    @apply flex gap-2
+    @apply flex gap-3
 }
 .form--contact{
     @apply 
-    laptop:w-6/12
+    laptop:w-10/12
+}
+.icon-contact{
+    @apply relative cursor-pointer;
+}
+
+.tooltiptext{
+    @apply mt-5  hidden absolute text-bluehard font-medium w-60
+
+}
+.tooltiptext.show{
+    @apply flex flex-col gap-1 px-4 py-4 border min-w-min;
+}
+.tooltiptext a{
+    @apply w-fit
 }
 /* Section Contacto */
 
@@ -679,7 +703,7 @@
         mobile:flex-col mobile:gap-12 mobile:pb-8 
         tablet:px-14 tablet:gap-8  tablet:pb-16 laptop:py-8
         laptop:px-12 laptop:gap-0 
-        4k:px-20 4k:gap-0  
+        4k:px-24 4k:gap-0  
     }
     .content--about h2{
         @apply text-black text-2xl font-black
@@ -791,6 +815,15 @@
 .breadcrumbs-item:first-child::before{
     content: "";
 }
+/* Page Politica de privacidad */
+.content-politica{
+    @apply relative flex flex-col py-10 px-4 gap-5
+    text-hardgray font-normal text-lg
+    tablet:px-8
+    laptop:px-24 laptop:py-14  laptop:gap-8
+    4k:px-32;
+}
+/* End Politica de privacidad */
 /* End  Article blog */
 .none{
     @apply hidden;

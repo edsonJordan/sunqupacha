@@ -3,7 +3,13 @@ import React from 'react'
 import Carousel from 'react-multi-carousel';
 import SmallArrow from "./../../images/pages/small-right.svg";
 
+
+import { graphql, useStaticQuery } from "gatsby";
+
+
 type Props = {}
+
+
 
 const responsiveBlog = {
   superLargeDesktop: {
@@ -19,7 +25,7 @@ const responsiveBlog = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 1.5,
+    items: 1,
      
   },
   mobile: {
@@ -29,9 +35,31 @@ const responsiveBlog = {
   }
 };
 
+interface Post {
+  title?: string;
+  excerpt?: string;
+  slug:string | null;
+  uri: string | "#";
+}
 
 
 const SectionLastsBlogs = (props: Props) => {
+  const lastPosts = useStaticQuery(graphql`
+  {
+  	allWpPost(limit:4){
+    nodes{
+      title
+      excerpt
+      slug
+      uri
+    }
+	}
+}
+`);
+
+
+  // console.log();
+  
   return (
     <section className="section section--lastblog ">
         <div className="content content--lastblog">
@@ -50,31 +78,25 @@ const SectionLastsBlogs = (props: Props) => {
               autoPlaySpeed={4000}
 
               draggable={true}
-            >
-              <article className="blog-article ">
-                <div className="blog-article-testimonial">
-                    <h3>Kimmo Hakonen - Skrum Master at DaGear AB</h3>
-                    <p>
-                    sunqupacha helped us with our digital marketing for 4 months now and still helps us. Great service and highly recommended.
-                    </p>
-                    <a className="btn solid" href="#">
-                      Leer Mas
-                      <SmallArrow/>
-                    </a>
-                </div>
-              </article>
-              <article className="blog-article ">
-                <div className="blog-article-testimonial">
-                    <h3>— Kimmo Hakonen - Skrum Master at DaGear AB</h3>
-                    <p>
-                    sunqupacha helped us with our digital marketing for 4 months now and still helps us. Great service and highly recommended.
-                    </p>
-                    <a className="btn solid " href="#">
-                      Leer Mas
-                      <SmallArrow/>
-                    </a>
-                </div>
-              </article>
+            > 
+              {
+                lastPosts.allWpPost.nodes.map((post:Post, index:number)=>{
+                  return (
+                    <article key={index+"lastblog"} className="blog-article ">
+                      <div className="blog-article-testimonial">
+                          <h3>{post.title}</h3>
+
+                          <div   dangerouslySetInnerHTML={{ __html:post.excerpt}}/>
+                        
+                          <a className="btn solid" href={post.uri}>
+                            Leer Mas
+                            <SmallArrow/>
+                          </a>
+                      </div>
+                    </article>
+                  )
+                })
+              }
             </Carousel>
           
         </div>

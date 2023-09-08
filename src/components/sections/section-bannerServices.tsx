@@ -1,6 +1,7 @@
 import React from 'react'
 import BaseBanner from "./../../images/pages/base-hero.svg";
 import HeroBanner2 from "./../../images/pages/services.svg";
+import CtaForm from '../cta/ctaForm';
 type Props = {}
 
 const SectionBannerServices= (props: Props) => {
@@ -12,9 +13,9 @@ const SectionBannerServices= (props: Props) => {
             <span>Servicios</span>
             </h1>
             <p>
-              Estamos comprometidos con el éxito digital de los emprendedores en Perú. Ofrecemos una amplia gama de servicios diseñados para elevar tu presencia en línea y llevar tu negocio al siguiente nivel.
+                Creamos sitios web impactantes y optimizamos la visibilidad en línea a través de estrategias SEO, Google Ads y Facebook Ads. Conecta con tu audiencia y alcanza tus objetivos hoy mismo.
             </p>
-            <a  className="btn solid banner__call" href="#">Contactanos</a>
+            <CtaForm/>
           </div>
           <div className="flex justify-center">
             <HeroBanner2 

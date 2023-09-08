@@ -105,7 +105,7 @@ const PostTemplate = ({ pageContext }) => {
                 </div>
                 <h1 className="tittle">{data.title}</h1> 
                 {
-                  image !==null ??<GatsbyImage image={image} alt={altText} /> 
+                  image !==null ?<GatsbyImage image={image} alt={altText} /> :"Sin imagen"
                 }
                      
                 <div className="content-blog"  dangerouslySetInnerHTML={{ __html: data.content }}/>

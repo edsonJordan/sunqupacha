@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
+//Sections
+import SectionBannerBlogCategories from "../components/sections/section-bannerBlogCategories";
+
 
 //Transversales
 import Header from "./../components/sections/header";
 import Footer from "./../components/sections/footer";
 
-
+//Utils
 import Pagination from './../components/Pagination.tsx';
 import { paginate } from './../utils/paginationUtils';
-//Sections
-import SectionBannerBlogCategories from "../components/sections/section-bannerBlogCategories";
+
 
 
 

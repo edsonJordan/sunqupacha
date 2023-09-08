@@ -51,7 +51,7 @@ const SectionGridBlog = (props: Props) => {
     setItems(dataPosts.allWpPost.nodes);
 
   }, []);
-  console.log(dataPosts.allWpPost);
+  // console.log(dataPosts.allWpPost);
   
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);

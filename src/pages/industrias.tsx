@@ -1,11 +1,15 @@
 import React from 'react';
+import { HeadFC, graphql, useStaticQuery } from "gatsby";
+import { SeoStatic } from '../components/sections/seoStatic';
 
+//images
 import HeroBanner from "./../images/pages/Industries.svg";
 import BaseBanner from "./../images/pages/base-hero.svg";
-
 import Saas from "./../images/pages/saas.svg";
 import B2b from "./../images/pages/b2b.svg";
 import Ecommerce from "./../images/pages/e-commerce-solution.svg";
+
+
 
 //Transversales
 import Header from "./../components/sections/header";
@@ -25,10 +29,10 @@ const Industries: React.FC = () => {
         <div className="section__content section--banner">
           <div className="text-banner">
             <h1 className="section__title tittleBanner ">
-            <span>Industrias y experiencia</span>
+            <span>Potenciando Industrias Digitales</span>
             </h1>
             <p>
-              Una agencia especializada en generación de leads que te guía por todo el camino hacia el crecimiento. Ayudamos a una amplia gama de clientes B2B, SaaS y comercio electrónico a optimizar y maximizar su marketing digital. Generamos clientes potenciales ilimitados para su negocio utilizando una estrategia única y probada. A lo largo del camino, tendrá una visión general completa.
+              Entendemos lo crucial que es cada paso en tu camino. Con nuestra experiencia en desarrollo web impactante, SEO, Google Ads y Facebook Ads, hemos impulsado el crecimiento sostenible de negocios. Sabemos que cada clic y conversión son esenciales. Confía en nosotros para ofrecerte soluciones estratégicas y profesionales que refuercen tu presencia en línea.
             </p>
             
           </div>
@@ -114,3 +118,63 @@ const Industries: React.FC = () => {
 };
 
 export default Industries;
+
+export const Head: HeadFC = () => {
+  const imagesPage = useStaticQuery(graphql`
+  query {
+    logoSectionImage: allFile(
+      filter: {
+        extension: { regex: "/(png)/" }
+        absolutePath: { regex: "/images/pages/" }
+        name: { eq: "logo-section-industries" }
+      }
+    ) {
+      nodes {
+        name
+        childImageSharp {
+          fluid(maxWidth: 915, quality: 70) {
+            aspectRatio
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+    
+    logoImage: allFile(
+      filter: {
+        extension: { regex: "/(png)/" }
+        absolutePath: { regex: "/images/" }
+        name: { eq: "logo" }
+      }
+    ) {
+      nodes {
+        name
+        childImageSharp {
+          fluid(maxWidth: 915, quality: 70) {
+            aspectRatio
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  }
+`);
+  const imagenSection = imagesPage.logoSectionImage.nodes[0].childImageSharp.fluid.src;
+  const imagenLogo = imagesPage.logoImage.nodes[0].childImageSharp.fluid.src;
+  return (
+  <SeoStatic 
+      title={"Industrias - SunquPacha"}
+      metaDesc="Impulsando industrias con SEO, Google Ads y Facebook Ads. Experimenta crecimiento sostenible en línea con soluciones estratégicas y profesionales."
+      titleSection="Servicios"
+      opengraphDescription="Sitios web impactantes y optimizamos la visibilidad con estrategias SEO . Conecta con tu audiencia y alcanza tus objetivos hoy mismo."
+      ogimage={imagenSection}
+      tittleTwitter="Diseño Web Creativo en Perú"
+      metaTwitter="Servicios de diseño web y marketing digital en Perú. Transformamos tus ideas en sitios web impactantes y aplicamos estrategias efectivas para tu éxito en línea."
+      logoImage={imagenLogo}
+      canonical="/industrias"
+      
+  >
+    </SeoStatic>
+
+  )
+}

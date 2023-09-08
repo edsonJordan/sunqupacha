@@ -5,6 +5,7 @@ import Hero1 from "./../../images/pages/hero1.svg";
 import Hero2 from "./../../images/pages/hero2.svg";
 import Hero3 from "./../../images/pages/hero3.svg";
 import Hero4 from "./../../images/pages/hero4-2.svg";
+import { StaticImage } from "gatsby-plugin-image";
 
 type Props = {}
 
@@ -19,8 +20,17 @@ const SectionWorks = (props: Props) => {
               <article className="card">
                 <div className="card__content">
                   <div className="card__image">
-                    <Hero1
+                    {/* <Hero1
                       className="image"
+                    /> */}
+                     <StaticImage
+                      src="./../../images/pages/hero1.jpg" // Ruta relativa a la carpeta "src/images"
+                      alt="Mi imagen"
+                      className='h-full object-cover'
+                      placeholder="blurred" // Puedes cambiar esto a "none" o "tracedSVG" según tus preferencias
+                      // layout="fixed"
+                      width={942} // Ancho deseado de la imagen
+                      height={971} // Altura deseada de la imagen
                     />
                   </div>                  
                   <div className="text__card">
@@ -36,8 +46,18 @@ const SectionWorks = (props: Props) => {
               <article className="card">
                 <div className="card__content">
                   <div className="card__image">
-                  <Hero2
+                  {/* <Hero2
                       className="image"
+                    /> */}
+                    <StaticImage
+                      src="./../../images/pages/hero2.jpg" // Ruta relativa a la carpeta "src/images"
+                      
+                      alt="Mi imagen"
+                      className='w-full object-contain '
+                      placeholder="blurred" // Puedes cambiar esto a "none" o "tracedSVG" según tus preferencias
+                      // layout="fixed"
+                      width={942} // Ancho deseado de la imagen
+                      height={971} // Altura deseada de la imagen
                     />
                   </div>                  
                     <div className="text__card">
@@ -53,9 +73,19 @@ const SectionWorks = (props: Props) => {
                 <article className="card">
                   <div className="card__content">
                     <div className="card__image">
-                    <Hero3
+                    <StaticImage
+                      src="./../../images/pages/hero3.jpg" // Ruta relativa a la carpeta "src/images"
+                      
+                      alt="Mi imagen"
+                      className='w-full object-cover '
+                      placeholder="blurred" // Puedes cambiar esto a "none" o "tracedSVG" según tus preferencias
+                      // layout="fixed"
+                      width={497} // Ancho deseado de la imagen
+                      height={518} // Altura deseada de la imagen
+                    />
+                    {/* <Hero3
                         className="image"
-                      />
+                      /> */}
                     </div>               
                   <div className="text__card">
                     <h3 className="card__tittle" >
@@ -70,8 +100,18 @@ const SectionWorks = (props: Props) => {
                 <article className="card">
                   <div className="card__content">
                     <div className="card__image">
-                  <Hero4
+                  {/* <Hero4
                      className="image"
+                    /> */}
+                    <StaticImage
+                      src="./../../images/pages/hero4.jpg" // Ruta relativa a la carpeta "src/images"
+                      
+                      alt="Mi imagen"
+                      className=' w-full object-cover '
+                      placeholder="blurred" // Puedes cambiar esto a "none" o "tracedSVG" según tus preferencias
+                      // layout="fixed"
+                      width={360} // Ancho deseado de la imagen
+                      height={295} // Altura deseada de la imagen
                     />
                   </div>
                   <div className="text__card">

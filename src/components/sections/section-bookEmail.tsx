@@ -11,7 +11,7 @@ const SectionBookEmail = (props: Props) => {
         Reserve una consulta gratuita de marketing digital 
       </h2>
       <div className="form form--email">
-        <form action="POST">
+        <form name="contact" method="POST" className="form form--contact" data-netlify="true">
           <input type="email" name="email" id="email" placeholder="Ingrese su correo" />
           <input className="btn pill" type="submit" value="Reserva mi reunión gratuita" />
         </form>

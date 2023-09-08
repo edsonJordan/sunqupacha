@@ -15,6 +15,7 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     {
+      
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://sunqupacha.com/',
@@ -69,6 +70,7 @@ const config: GatsbyConfig = {
       },
     },
     {
+      
     resolve: 'gatsby-source-wordpress',
     
     options: {
@@ -81,9 +83,28 @@ const config: GatsbyConfig = {
   }, 
   "gatsby-plugin-image", 
   "gatsby-plugin-sharp", 
+  {
+    resolve: `gatsby-plugin-preload-fonts`,
+    options: {
+      // crossOrigin: `anonymous`,
+      // crossOrigin: `use-credentials`,
+     
+    },
+  },
   
   "gatsby-transformer-sharp", 
   "gatsby-plugin-postcss", 
+  /* {
+    resolve: `gatsby-plugin-prefetch-google-fonts`,
+    options: {
+      fonts: [
+        {
+          family: `Roboto`,
+          variants: [`400`,`500`,`700`, `900`]
+        },
+      ],
+    },
+  }, */
   // "gatsby-plugin-google-gtag", 
   "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
