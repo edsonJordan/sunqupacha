@@ -82,22 +82,24 @@ const SectionContactEmail = (props: Props) => {
               
             </div>
           </div>
-          <form name="contact" method="POST" className="form form--contact" data-netlify="true">
+          <form name="lead"  method="POST" className="form form--contact" netlify-honeypot="bot-field" data-netlify="true">
+            <input type="hidden" name="form-name" value="lead" />
             <div className="form-group">
-              <input type="text" name="Name" placeholder="Nombre" id="name" />
+              <input type="text" name="Name" required placeholder="Nombre" id="name" />
             </div>
             <div className="form-group">
-              <input type="text" name="Email" placeholder="Email" id="email" />
+              <input type="text" name="Email" required placeholder="Email" id="email" />
             </div>
             <div className="form-group">
-              <input type="text" name="Subject" placeholder="Asunto" id="asunto" />
+              <input type="text" name="Subject" required placeholder="Asunto" id="asunto" />
             </div>
             <div className="form-group">
-              <textarea name="Mensaje" id="message" placeholder="message">
+              <textarea name="Mensaje" id="message" required placeholder="message">
               </textarea>
             </div>
+
             <div className="form-group">
-              <input className="btn solid" type="submit" value="Enviar" />
+              <button className="btn solid" type="submit">Enviar</button>
             </div>
           </form>
         </div>

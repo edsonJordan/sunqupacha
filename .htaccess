@@ -1,0 +1,15 @@
+# Habilitar la configuración de encabezados para archivos HTML
+<FilesMatch "\.html$">
+  Header set Cache-Control "max-age=3600"
+</FilesMatch>
+
+# Habilitar la configuración de encabezados para archivos CSS estáticos
+# Configuración de caché para archivos JavaScript (.js)
+<FilesMatch "\.js$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+
+# Configuración de caché para archivos CSS (.css)
+<FilesMatch "\.css$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>

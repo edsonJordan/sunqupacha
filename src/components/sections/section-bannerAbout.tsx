@@ -2,6 +2,7 @@ import React from 'react'
 
 import HeroBanner from "./../../images/pages/banner-about.svg";
 import BaseBanner from "./../../images/pages/base-hero.svg";
+import CtaForm from '../cta/ctaForm';
 
 
 type Props = {}
@@ -17,7 +18,7 @@ const SectionBannerAbout = (props: Props) => {
           <p>
             En un mundo digital competitivo y en constante evolución, es imperativo mantenerse en la cima y estar informado, ser muy visible entre los resultados de búsqueda y los feeds, y ser receptivo a su audiencia.
           </p>
-          <a  className="btn solid banner__call" href="#">Contactanos</a>
+          <CtaForm/>
         </div>
         <div className="flex justify-center">
           <HeroBanner 

@@ -29,7 +29,8 @@ const IndexPage: React.FC<PageProps> = () => {
     <main className="main" >
       <SectionBannerIndex/>
       <LazyLoadOnScroll component={SectionWorks}/>
-      <LazyLoadOnScroll component={SectionBookEmail}/>
+      <SectionBookEmail/>
+      {/* <LazyLoadOnScroll component={}/> */}
       <LazyLoadOnScroll component={SectionTestimonial}/>
       <LazyLoadOnScroll component={SectionLastsBlogs}/>
       <LazyLoadOnScroll component={SectionWhySunqupacha}/>

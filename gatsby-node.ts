@@ -21,10 +21,15 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
         categories{
           nodes{
             name
-            contentNodes{             
+            posts{
               nodes{
+                title
                 slug
-                contentTypeName
+                excerpt
+                seo{
+                  readingTime
+                  opengraphPublishedTime
+                }
               }
             }
           }

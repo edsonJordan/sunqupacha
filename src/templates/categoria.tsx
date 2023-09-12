@@ -43,7 +43,7 @@ const Categoria: React.FC = ({ pageContext }) => {
       };
       
     const urlWeb : string | undefined = process.env.SITE_URL;
-      console.log(pageContext.data.posts.nodes);
+      // console.log(pageContext.data.posts.nodes);
       
     
   return (

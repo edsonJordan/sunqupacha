@@ -63,9 +63,11 @@ const config: GatsbyConfig = {
       },
     },
     {
+      // 2735675966651735
+      // antiguo 635580070875733
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
-        pixelId: "635580070875733",
+        pixelId: "2735675966651735",
         
       },
     },

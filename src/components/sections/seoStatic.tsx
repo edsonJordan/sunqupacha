@@ -41,8 +41,8 @@ export const SeoStatic: React.FC<SeoMetaTagsProps> = ( {title, metaDesc, titleSe
     authorName: "admin",
     organizationId: `/#organization`,
     organizationName: "SunquPacha",
-    organizationDescription: "Descripción de la organización",
-    organizationLogoUrl: `${urlWeb}/${logoImage}`,
+    organizationDescription: "Agencia de Desarrollo Web en Perú.",
+    organizationLogoUrl: `${urlWeb}${logoImage}`,
     "author": {
       "@type": "Person",
       "name": "admin"
@@ -53,11 +53,11 @@ export const SeoStatic: React.FC<SeoMetaTagsProps> = ( {title, metaDesc, titleSe
       "description": "Agencia de Desarrollo Web en Perú.",
       "logo": {
         "@type": "ImageObject",
-        "url": `${urlWeb}/${logoImage}`
+        "url": `${urlWeb}${logoImage}`
       }
     }
   };
-
+  
 
 
   return (
@@ -77,14 +77,13 @@ export const SeoStatic: React.FC<SeoMetaTagsProps> = ( {title, metaDesc, titleSe
         {/* Twitter meta tags */}
         <meta name="twitter:title" content={tittleTwitter} />
         <meta name="twitter:description" content={metaTwitter} />
-
-        {/* Font */}
-        {/* <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" as="font" type="font/woff2" /> */}
-
+        <meta property="twitter:image" content={`${urlWeb}${ogimage}`} />
+    
+   
         {
             noIndex ? (
             <meta name="robots" content="noindex" />
-          ) :  <meta name="robots" content="index" />
+          ) :  <meta name="robots" content="index, follow" />
         }
         
         {/* Breadcrumbs */}

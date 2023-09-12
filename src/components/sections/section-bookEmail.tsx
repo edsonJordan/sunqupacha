@@ -11,10 +11,20 @@ const SectionBookEmail = (props: Props) => {
         Reserve una consulta gratuita de marketing digital 
       </h2>
       <div className="form form--email">
-        <form name="contact" method="POST" className="form form--contact" data-netlify="true">
-          <input type="email" name="email" id="email" placeholder="Ingrese su correo" />
-          <input className="btn pill" type="submit" value="Reserva mi reunión gratuita" />
-        </form>
+      {/* <form name="subcripcion"  method="POST" action='./' className="form form--contact" netlify-honeypot="bot-field" data-netlify="true">
+        <input type="hidden" name="form-name" value="subcripcion" />
+          <input type="text" name="Email" placeholder="Email" id="email" />          
+          <button className="btn pill" type="submit">Reserva mi reunión gratuita</button>
+      </form> */}
+          <form name="subcripcion"  method="POST" className="form form--contact" netlify-honeypot="bot-field" data-netlify="true">
+            <input type="hidden" name="form-name" value="subcripcion" />            
+            <div className="form-group">
+              <input type="text" name="Email" required required placeholder="Email" id="email" />
+            </div>
+            <div className="form-group">
+              <button className="btn solid" type="submit">Reserva mi reunión gratuita</button>
+            </div>
+          </form>
       </div>
     </div>
   </section>

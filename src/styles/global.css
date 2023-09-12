@@ -325,7 +325,7 @@
         @apply p-4
       }
       .form--contact .btn.solid{
-        @apply max-h-none
+        @apply max-h-none w-full py-3
         hover:scale-100
       }
     /* Ends form contact */
@@ -461,8 +461,20 @@
 .section--lastblog .blog .solid{
     @apply flex flex-row gap-2 font-semibold mt-5 rounded-none bg-white border-0  border-black  text-black w-fit
     active:bg-white active:text-black
-
 }
+.social__share{
+     @apply flex flex-col gap-3
+}
+.social__share .icon{
+    @apply  block w-7 h-7 fill-gray-700 hover:fill-bluehard
+}
+.article__others{
+    @apply pt-9 text-center flex flex-col gap-3
+}
+.article__others .title{
+    @apply text-lg font-medium  text-bluehard
+}
+
 /* Section About */
 .text-banner .section__title.about span:nth-child(1)::after{
     @apply hidden;
@@ -470,6 +482,7 @@
 .text-banner:nth-child(1){
     @apply laptop:w-6/12
 }
+
 
 /* End Section about */
 
@@ -522,6 +535,21 @@
     desktop:grid-cols-3 
     4k:grid-cols-3    
     gap-8
+}
+.grid-blog.others{
+    @apply 
+    gap-2
+    tablet:grid-cols-1
+    desktop:grid-cols-1 
+    4k:grid-cols-1
+    bg-white
+}
+.grid-blog.others .card{
+    @apply py-2 px-2  ;
+    box-shadow: none;
+}
+.grid-blog.others .card .card-header{
+    @apply text-base text-left
 }
 .section-hero.audit {
     @apply bg-lightgray pb-12 
@@ -731,7 +759,7 @@
     
 }
 .main--blog{
-    @apply flex flex-col   gap-10
+    @apply relative flex flex-col   gap-10
     desktop:flex-row;
 }
 
@@ -760,10 +788,23 @@
 }
 .article-blog{
     @apply flex flex-col gap-4 max-w-3xl
+    laptop:flex-row
+}
+.article__content{
+    @apply  flex flex-col gap-6
+    
 }
 .article-blog .tittle{
     @apply mb-4  text-bluehard
 }
+/* .article-others__content{
+    @apply grid items-start w-full justify-center
+    mobile:grid-cols-1 
+    tablet:grid-cols-2 
+    desktop:grid-cols-3 
+    4k:grid-cols-3    
+    gap-8
+} */
 .article-blog .tittle::after{
     @apply hidden 
 }
@@ -788,6 +829,12 @@
 }
 .content-blog h3 p{
     @apply pl-0;
+}
+.content-blog ul li{
+    @apply text-normalgray;
+}
+.content-blog ul li strong{
+    @apply text-bluehard;
 }
 .content-blog ~ h2 ~   p:nth-child(1){
     @apply pl-0 bg-red-500;
