@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React from 'react'
 
 const Footer: React.FC = () => {
@@ -6,21 +7,22 @@ const Footer: React.FC = () => {
         <div className='navigation'>  
             <ul className='footer__list'>
                 <li>
-                <a className='logo' href="#">
-                    SunquPacha
-                </a>
+                <Link   title='Sunqupacha: Inicio' className='logo__text' to="/">SunquPacha</Link>
+
                 </li>
                 <li>
-                    <a className='navigation__link' href="#">Servicios</a>
+                    <Link   title='Sunqupacha: nuestros servicios' className='navigation__link' to="/servicios">Servicios</Link>
                 </li>
                 <li>
-                    <a className='navigation__link' href="#">Industrias</a>
+                    <Link title='Sunqupacha: experiencias en industrias'className='navigation__link' to='/industrias'  >Industrias</Link>
                 </li>
                 <li>
-                    <a className='navigation__link' href="#">Acerca de Nosotros</a>
+                    <Link title='Sunqupacha: acerca de nosotros'  className='navigation__link' to='/nosotros'>Acerca de Nosotros</Link>
+                    
                 </li>
                 <li>
-                    <a className='navigation__link' href="#">Blog</a>
+                    <Link title='Sunqupacha: nuestro blog'  className='navigation__link' to='/blog'>Blog</Link>
+                    
                 </li>
                 
             </ul>            
@@ -30,7 +32,8 @@ const Footer: React.FC = () => {
                     <p className='navigation__link title' >Compañia</p>
                 </li>
                 <li>
-                    <a className='navigation__link' href="#">Industrias</a>
+                    <Link title='Nuestra politica de privacidad' className='navigation__link' to='/politica'>Política de privacidad</Link>
+                    
                 </li>
                 <li>
                     <a className='navigation__link' href="#">Acerca de Nosotros</a>

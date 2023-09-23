@@ -58,7 +58,6 @@ const SectionLastsBlogs = (props: Props) => {
 `);
 
 
-  // console.log();
   
   return (
     <section className="section section--lastblog ">
@@ -81,6 +80,8 @@ const SectionLastsBlogs = (props: Props) => {
             > 
               {
                 lastPosts.allWpPost.nodes.map((post:Post, index:number)=>{
+                  console.log(post);
+                  
                   return (
                     <article key={index+"lastblog"} className="blog-article ">
                       <div className="blog-article-testimonial">
@@ -88,7 +89,7 @@ const SectionLastsBlogs = (props: Props) => {
 
                           <div   dangerouslySetInnerHTML={{ __html:post.excerpt}}/>
                         
-                          <a className="btn solid" href={post.uri}>
+                          <a className="btn solid" href={`/blog${post.uri}`}>
                             Leer Mas
                             <SmallArrow/>
                           </a>

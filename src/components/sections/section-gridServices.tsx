@@ -1,18 +1,63 @@
 import React from 'react'
-
+import { Link } from 'gatsby'
+//icons
 import Startup from "./../../images/pages/startup.svg";
-
 import Promotion from "./../../images/pages/promotion.svg";
 import Writer from "./../../images/pages/writer.svg";
+
+
+//data services
+import { useServiciosData } from "../../data/services"; 
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 type Props = {}
 
 const SectionGridServices = (props: Props) => {
+
+  
+  const serviciosData = useServiciosData();
   return (
     <section className="section section--services">
         <div className="content content--lastblog ">
           <div className="grid-blog service">
-            <div className="card card--service">
+
+            {
+              serviciosData.map((service, index)=>{
+              const image= service.iconimage.iconimage.localFile.childImageSharp.gatsbyImageData;
+              const altImage =  service.iconimage.iconimage.altText;
+              
+              
+                return (
+                  <div key={index} className="card card--service">
+                    <div className="card-header">
+                    {
+                        image !==null ?<GatsbyImage objectFit="contain" image={image} alt={altImage}  /> :"Sin imagen"
+                      }   
+                            <h2>
+                              {
+                                service.title
+                              }
+                            </h2>                    
+                    </div>
+                    <div className="card-body">
+                            
+                            {
+                              <p   dangerouslySetInnerHTML={{ __html: service.excerpt }}/>
+                            }
+                           
+                    </div>
+                    <div className="card-footer">
+                      <Link className="btn pill" to={service.uri}>
+                        Ver mas
+                      </Link>
+                           
+                    </div>
+                  </div>
+                )
+              })
+            }
+
+            {/* <div className="card card--service">
               <div className="card-header">
                       <Startup/>
                       <h2>
@@ -30,6 +75,9 @@ const SectionGridServices = (props: Props) => {
                       </a>
               </div>
             </div>
+
+
+
             <div className="card card--service">
               <div className="card-header">
                       <Writer/>
@@ -67,7 +115,6 @@ const SectionGridServices = (props: Props) => {
                       </a>
               </div>
             </div>
-
             <div className="card card--service">
               <div className="card-header">
                       <Promotion/>
@@ -85,11 +132,7 @@ const SectionGridServices = (props: Props) => {
                         ver mas
                       </a>
               </div>
-            </div>
-
-            
-
-            
+            </div>     */}        
           </div>
           
         </div>

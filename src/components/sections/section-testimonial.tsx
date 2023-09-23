@@ -90,53 +90,57 @@ const SectionTestimonial = (props: Props) => {
             <article className="testimonial ">
               <StaticImage 
                 className="testimonial__image"
-                src="./../../images/pages/rectangulo.jpg"
-                alt="Es un testimonio"
+                src="./../../images/testimonials/ana-lopes.jpg"
+                alt="Testimonio de Ana López trabajando con Sunqupacha"
+                title="Ana López, fundadora de una tienda en línea exitosa en Perú"
               />
               <div className="text-testimonial">
                   <p>
-                  sunqupacha helped us with our digital marketing for 4 months now and still helps us. Great service and highly recommended.
+                      SunquPacha ha sido un verdadero aliado en mi viaje. Su equipo creó un sitio web que no solo luce increíble, sino que también es fácil de usar para mis clientes. Gracias a su experiencia en marketing digital, he visto un aumento notable en las ventas. Si eres un emprendedor como yo en Perú, no dudes en trabajar con ellos.
                   </p>
-                  <h3>— Kimmo Hakonen - Skrum Master at DaGear AB</h3>
+                  <h3>— Ana López - fundadora de una tienda en línea</h3>
               </div>
             </article>
             <article className="testimonial ">
               <StaticImage 
                 className="testimonial__image"
-                src="./../../images/pages/rectangulo.jpg"
-                alt="Es un testimonio"
+                src="./../../images/testimonials/pedro-rodriguez.jpg"
+                alt="Testimonio de Pedro Rodríguez trabajando con Sunqupacha"
+                title="Pedro Rodríguez, el capitan de su propio barco emprendedor"
               />
               <div className="text-testimonial">
                   <p>
-                  sunqupacha helped us with our digital marketing for 4 months now and still helps us. Great service and highly recommended.
+                    SunquPacha no solo diseñó un sitio web que representa perfectamente mi negocio, sino que también lo optimizó para el éxito en línea. Con su ayuda, he navegado hacia un aumento en las ventas que nunca pensé posible. Si eres un emprendedor en Perú, te recomiendo encarecidamente que confíes en SunquPacha para llevar tu negocio al siguiente nivel.
                   </p>
-                  <h3>— Kimmo Hakonen - Skrum Master at DaGear AB</h3>
+                  <h3>— Pedro Rodríguez - el capitán de mi propio barco emprendedor.</h3>
               </div>
             </article>
             <article className="testimonial ">
               <StaticImage 
                 className="testimonial__image"
-                src="./../../images/pages/rectangulo.jpg"
-                alt="Es un testimonio"
+                src="./../../images/testimonials/mariana-gonzales.jpg"
+                alt="Testimonio de Mariana González trabajando con Sunqupacha"
+                title="Mariana González, emprendedora en busca del crecimiento"
               />
               <div className="text-testimonial">
                   <p>
-                  sunqupacha helped us with our digital marketing for 4 months now and still helps us. Great service and highly recommended.
+                  Siempre estoy en busca de oportunidades para crecer. SunquPacha ha sido mi socio de confianza en este viaje. Han creado una presencia en línea sólida para mi negocio, y gracias a su experiencia en marketing digital, mi base de clientes sigue creciendo. Si buscas resultados reales para tu empresa, SunquPacha es la elección obvia.
                   </p>
-                  <h3>— Kimmo Hakonen - Skrum Master at DaGear AB</h3>
+                  <h3>— Mariana González - Emprendedora</h3>
               </div>
             </article>
             <article className="testimonial ">
               <StaticImage 
                 className="testimonial__image"
-                src="./../../images/pages/rectangulo.jpg"
-                alt="Es un testimonio"
+                src="./../../images/testimonials/luis-torres.jpg"
+                alt="Testimonio de Luis Torres trabajando con Sunqupacha"
+                title="Luis Torres, joven emprendedor apasionado por su negocio"
               />
               <div className="text-testimonial">
                   <p>
-                  sunqupacha helped us with our digital marketing for 4 months now and still helps us. Great service and highly recommended.
+                      Con SunquPacha, he encontrado un equipo que comparte esa pasión y ha llevado mi negocio a nuevas alturas. Desde el diseño de mi sitio web hasta la gestión de mis campañas de marketing, su dedicación es evidente. Como emprendedor en Perú, te digo que SunquPacha es más que una agencia digital, son tu socio en el éxito.
                   </p>
-                  <h3>— Kimmo Hakonen - Skrum Master at DaGear AB</h3>
+                  <h3>— Luis Torres - mi emprendimiento es mi pasión</h3>
               </div>
             </article>
           </Carousel>

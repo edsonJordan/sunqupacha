@@ -18,7 +18,7 @@ const SectionContactEmail = (props: Props) => {
 
  /*  function textWhatsapp(): string {
     // Realiza alguna operación en el texto
-    return `https://wa.me/51918874873?text=Hola+Sunqupacha.+%C2%BFMe+interesa+saber+de+${reemplazarEspaciosConMas(texto)}%3F`;
+    return `https://wa.me/51948 890 811?text=Hola+Sunqupacha.+%C2%BFMe+interesa+saber+de+${reemplazarEspaciosConMas(texto)}%3F`;
   } */
 
 
@@ -55,17 +55,17 @@ const SectionContactEmail = (props: Props) => {
                     width={42}/>
                     <div  className={statusWhatsApp ? "tooltiptext show":"tooltiptext" } >
                         <a 
-                        href='https://wa.me/51918874873?text=Hola+Sunqupacha.+Me+interesa+saber+mas+de+Marketing+Digital.+' 
+                        href='https://wa.me/51948 890 811?text=Hola+Sunqupacha.+Me+interesa+saber+mas+de+Marketing+Digital.+' 
                           onClick={()=>{setStatusWhatsApp(false); } }>
                           ¿Marketin Digital ?
                           </a>
                         <a 
-                        href='https://wa.me/51918874873?text=Hola+Sunqupacha.+Estoy+interesad@+en+Creacion+de+paginas+web.+' 
+                        href='https://wa.me/51948 890 811?text=Hola+Sunqupacha.+Estoy+interesad@+en+Creacion+de+paginas+web.+' 
                           onClick={()=>{setStatusWhatsApp(false)}}>
                           ¿Creacion de paginas web ?
                         </a>
                         <a 
-                        href='https://wa.me/51918874873?text=Hola+Sunqupacha.+Deseo+tener+servicio+de+soporte.+' 
+                        href='https://wa.me/51948 890 811?text=Hola+Sunqupacha.+Deseo+tener+servicio+de+soporte.+' 
                           onClick={()=>{setStatusWhatsApp(false)}}>
                           ¿Soporte ?
                         </a>

@@ -1,4 +1,3 @@
-// src/templates/post.tsx
 import React from "react";
 // import { graphql } from "gatsby";// Ajusta la importación según tu estructura de carpetas
 import cheerio from "cheerio";
@@ -49,7 +48,7 @@ const PostTemplate = ({ pageContext }) => {
     const {data, seo} = pageContext
 
   const headings = extractHeadingsFromHTML(data.content);
-    // console.log(headings);
+ 
     // const image = getImage(data.featuredImage.node.localFile.childImageSharp.gatsbyImageData);
     const image = data.featuredImage ? getImage(data.featuredImage.node.localFile.childImageSharp.gatsbyImageData) : "";
     const altText = data.featuredImage ?  data.featuredImage.node.altText : "Imagen alt"
@@ -57,7 +56,7 @@ const PostTemplate = ({ pageContext }) => {
     const othersArticles = data.categories.nodes[0].posts.nodes;
     const articleSeo = data.seo
     const urlWeb : string | undefined = process.env.SITE_URL;
-    // console.log(articleSeo);
+ 
     
   
 
@@ -83,8 +82,12 @@ const PostTemplate = ({ pageContext }) => {
             <div className="breadcrumbs">
               {
                 data.seo.breadcrumbs.map((element, index)=>{
+                 
+                  const isLastElement = index === data.seo.breadcrumbs.length - 1;
+                  // Modifica la URL si es el último elemento
+                  const url = isLastElement ? `/blog${element.url}` : element.url;
                   return (
-                    <a key={index+"breadcrumbs"} href={element.url} className="breadcrumbs-item">
+                    <a key={index+"breadcrumbs"} href={`${url}`} className="breadcrumbs-item">
                       {element.text}
                     </a>
                   )
@@ -105,25 +108,25 @@ const PostTemplate = ({ pageContext }) => {
               <div className="article-blog">
                 <div className="article__content">
                   <div className="info-blog" >
-                  <div className="tags-blog">
-                    {
-                      data.categories.nodes.map((element, index)=>(
-                        <div key={index+"tag"} className="tag-blog">
-                          <p>
-                            {element.name}  
-                          </p> 
-                      </div>
-                      ))
-                    }
+                    <div className="tags-blog">
+                      {
+                        data.categories.nodes.map((element, index)=>(
+                          <div key={index+"tag"} className="tag-blog">
+                            <p>
+                              {element.name}  
+                            </p> 
+                        </div>
+                        ))
+                      }
+                        
                       
-                    
-                  </div>
-                  <div className="fecha-blog">
-                    {data.date}
-                  </div>
-                  <div className="time-read">
-                    {data.seo.readingTime}min de lectura
-                  </div>
+                    </div>
+                    <div className="fecha-blog">
+                      {data.date}
+                    </div>
+                    <div className="time-read">
+                      {data.seo.readingTime}min de lectura
+                    </div>
                   </div>
                   <h1 className="tittle">{data.title}</h1> 
                   {
@@ -154,20 +157,20 @@ const PostTemplate = ({ pageContext }) => {
 
                 </div>
                 <div className="social__share">
-                    <button className="icon"  onClick={(e) => {
+                    <button title="Copiar Link de articulo" className="icon"  onClick={(e) => {
                           e.preventDefault(); // Evita que el enlace navegue a una nueva página
-                          copyToClipboard(`${urlWeb}${articleSeo.opengraphUrl}`);
+                          copyToClipboard(`${urlWeb}/blog${articleSeo.opengraphUrl}`);
                   }}
                     >
                       <Link/>
                     </button>
-                    <a className="icon" rel="nofollow noopener noreferrer" target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${urlWeb}${articleSeo.opengraphUrl}`}>
+                    <a title="Compartir Articulo por facebook" className="icon" rel="nofollow noopener noreferrer" target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=${urlWeb}/blog${articleSeo.opengraphUrl}`}>
                       <Facebook/>
                     </a>
-                    <a target="_blank" rel="nofollow noopener noreferrer" href={`https://twitter.com/intent/tweet?text=${articleSeo.opengraphTitle}&url=${urlWeb}${articleSeo.opengraphUrl}`} className="icon">
+                    <a title="Compartir Articulo por twitter" target="_blank" rel="nofollow noopener noreferrer" href={`https://twitter.com/intent/tweet?text=${articleSeo.opengraphTitle}&url=${urlWeb}/blog${articleSeo.opengraphUrl}`} className="icon">
                       <Twitter/>
                     </a>
-                    <a className="icon" rel="nofollow noopener noreferrer" target="_blank" href={`mailto:?subject=${articleSeo.opengraphTitle};body=Article:%20${urlWeb}${articleSeo.opengraphUrl}`}>
+                    <a title="Compartir Articulo por email" className="icon" rel="nofollow noopener noreferrer" target="_blank" href={`mailto:?subject=${articleSeo.opengraphTitle};body=Article:%20${urlWeb}/blog${articleSeo.opengraphUrl}`}>
                       <Email/>
                     </a>                  
                 </div>

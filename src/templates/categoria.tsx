@@ -19,6 +19,12 @@ interface Item {
     id: number;
     title: string;
     content:string;
+    slug:string;
+    excerpt:string;
+    date:string;
+    seo:{
+      readingTime:number
+    }
   }
   
   const itemsPerPage = 5;
@@ -57,7 +63,13 @@ const Categoria: React.FC = ({ pageContext }) => {
             {currentItems.map((item, index) => (
                 <article className="card card--blog"key={index}>
                   <div className="card-header">
-
+                  <div className="info-blog">
+                      
+                      <div className="fecha-blog">
+                        {item.date}
+                      </div>
+                      <div className="time-read">{item.seo.readingTime}min de lectura</div>
+                    </div>
                     <h2 className="">
                       {item.title}
                     </h2>                    

@@ -9,6 +9,9 @@
 .logo{
     @apply text-primary flex  font-black text-2xl flex-row gap-1 items-center justify-center h-12
 }
+.logo__text{
+    @apply text-white font-bold text-3xl font-roboto
+}
 .header{
    @apply font-roboto
 }
@@ -16,8 +19,8 @@
     @apply 
     text-center flex flex-col
     mobile:p-4 mobile:gap-6 
-    tablet:text-sm tablet:flex-row tablet:justify-between 
-    laptop:text-base laptop:p-6
+    tablet:text-sm    tablet:p-8  tablet:flex-row tablet:justify-between 
+    laptop:text-base laptop:p-6 laptop:px-10
     desktop:px-16 
     4k:px-24;
     @screen laptop{
@@ -386,15 +389,15 @@
     box-shadow: 0px 20px 114px 0px rgba(0, 0, 0, 0.15);
 }
 .testimonial{
-    @apply flex flex-col justify-center items-center gap-4
+    @apply flex flex-col h-full justify-center items-center gap-4
     tablet:flex-row 
     desktop:px-6 desktop:gap-8
     ;
 }
 .testimonial__image{
-    @apply w-4/12 object-contain
-    laptop:w-4/12 
-    4k:w-1/6
+    @apply w-8/12 object-contain
+    laptop:w-8/12 
+    4k:w-2/6
 }
 .text-testimonial{
     @apply flex flex-col gap-2
@@ -419,11 +422,16 @@
 .content--lastblog{
     @apply flex flex-col px-8 py-12 gap-10 relative
     tablet:px-8
-    laptop:px-16 laptop:pr-0 laptop:flex-row laptop:justify-between laptop:w-full
-    4k:px-24  4k:pr-0 4k:flex-row 
+    laptop:px-16  laptop:flex-row laptop:justify-between laptop:w-full
+    4k:px-24   4k:flex-row 
     
     ;
 }
+.section--lastblog .content--lastblog{
+    @apply laptop:pr-0 
+    4k:pr-0
+}
+/* */
 .content--lastblog .tittle{
     @apply text-white text-3xl font-bold  
     tablet:text-4xl 
@@ -463,7 +471,9 @@
     active:bg-white active:text-black
 }
 .social__share{
-     @apply flex flex-col gap-3
+     @apply flex gap-3
+     desktop:flex-col 
+     desktop:top-10 desktop:h-fit desktop:sticky;
 }
 .social__share .icon{
     @apply  block w-7 h-7 fill-gray-700 hover:fill-bluehard
@@ -579,6 +589,9 @@
 .section-hero .grid-blog .card .card-header{
    @apply text-primary text-2xl
 }
+.card--service .card-header{
+    @apply flex flex-col gap-3 items-start 
+ }
 .section-hero .grid-blog .card:nth-child(1){
     @apply 
     desktop:max-w-sm
@@ -631,7 +644,7 @@
     desktop:gap-12; 
 }
 .card--service{
-    @apply relative flex flex-col gap-4 px-5 py-6 rounded-xl bg-white
+    @apply relative flex flex-col gap-4 px-8 py-10 rounded-xl bg-white
     desktop:px-12 desktop:py-16
     ;
     box-shadow: 0px 69px 120px 0px rgba(0, 0, 0, 0.08);
@@ -753,21 +766,23 @@
 .content--blog{
     @apply  relative flex flex-col py-10 px-4 gap-5
     tablet:px-8
-    laptop:px-16 laptop:py-14  laptop:gap-8
-    
+    laptop:px-10 laptop:py-14  laptop:gap-8
+    desktop:px-16
     4k:px-24;
     
 }
 .main--blog{
-    @apply relative flex flex-col   gap-10
-    desktop:flex-row;
+    @apply relative items-center flex flex-col   gap-10
+    laptop:flex-row laptop:items-start
+    
 }
 
 .table-of-contents{
     /* box-shadow:  0px 0px 120px 0px rgba(0, 0, 0, 0.09); */
-    @apply  bg-bgprimary w-fit rounded-2xl py-2 px-3 pr-3  
-    tablet:py-10  tablet:px-8 tablet:pr-10 tablet:max-w-md 
-    desktop:top-8 desktop:h-fit desktop:sticky 
+    @apply  bg-bgprimary min-w-[280px] h-fit  w-fit rounded-2xl py-2 px-3 pr-3  
+    tablet:py-10  tablet:px-8 tablet:pr-10 
+    laptop:max-w-md   laptop:sticky  laptop:top-8 laptop:h-fit
+    desktop:max-w-lg  
     ;
 }
 .table-of-contents .tittle-table{
@@ -787,15 +802,19 @@
     @apply pb-2 pl-6
 }
 .article-blog{
-    @apply flex flex-col gap-4 max-w-3xl
-    laptop:flex-row
+    @apply flex flex-col gap-4 max-w-2xl
+    laptop:max-w-4xl
+    desktop:flex-row 
 }
 .article__content{
     @apply  flex flex-col gap-6
     
 }
 .article-blog .tittle{
-    @apply mb-4  text-bluehard
+    @apply self-start mb-4  text-bluehard
+}
+.servicio .article__content .tittle{
+    @apply font-black uppercase;
 }
 /* .article-others__content{
     @apply grid items-start w-full justify-center
@@ -814,21 +833,45 @@
 .content-blog p {
     @apply text-normalgray
 }
+.content-blog li {
+    @apply text-normalgray
+}
+.content-blog li strong{
+    @apply text-bluehard
+}
 .content-blog p a{
-    @apply text-bluehard hover:underline
+    @apply text-bluehard underline hover:no-underline
 }
 .content-blog h2{
     @apply pt-9 text-bluehard font-semibold text-2xl pb-3
 }
+.content-blog h2 ~ figure{
+    @apply pl-9;
+}
 
 .content-blog h3{
-    @apply pt-3 pl-6 text-bluehard font-medium text-xl pb-1
+    @apply pt-3 pl-2 text-bluehard font-medium text-xl pb-1
 }
-.content-blog h3  ~ p{
+.content-blog h4{
+    @apply pt-3 pl-6 text-bluehard font-medium text-lg pb-1
+}
+.content-blog   h4 ~ p{
+    @apply pl-10
+}
+.content-blog h3 ~ p{
     @apply pl-6
+}
+.content-blog h3 ~ ol{
+    @apply pl-10
+}
+.content-blog h3 ~ ul{
+    @apply pl-10
 }
 .content-blog h3 p{
     @apply pl-0;
+}
+.content-blog h3 figure{
+    @apply pl-10;
 }
 .content-blog ul li{
     @apply text-normalgray;
@@ -838,6 +881,15 @@
 }
 .content-blog ~ h2 ~   p:nth-child(1){
     @apply pl-0 bg-red-500;
+}
+.content-blog figure{
+    @apply w-7/12
+}
+.content-blog h3 ~ h4 + figure + p:nth-child(n-1) {
+    @apply pb-10  ;
+} 
+.card-header .info-blog{
+    @apply pb-4 gap-y-2
 }
 .info-blog{
     @apply flex flex-wrap text-sm gap-4 flex-shrink items-center text-bluehard font-medium
@@ -862,6 +914,13 @@
 .breadcrumbs-item:first-child::before{
     content: "";
 }
+
+/* 
+.table-of-contents{
+   
+}
+
+*/
 /* Page Politica de privacidad */
 .content-politica{
     @apply relative flex flex-col py-10 px-4 gap-5

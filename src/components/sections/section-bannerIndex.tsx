@@ -23,7 +23,7 @@ const SectionBannerIndex = (props: Props) => {
       </div>
       <div className="flex justify-center">
         <HeroBanner 
-          className="object-contain h-fit mobile:w-64 laptop:w-8/12 "  alt="A kitten"/>
+          className="object-contain h-fit mobile:w-64 laptop:w-8/12 "  alt="Sunqupacha: Herramientas que utilizamos para nuestros servicios"/>
       </div>   
     </div>
     <BaseBanner

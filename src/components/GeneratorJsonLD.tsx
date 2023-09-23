@@ -38,15 +38,20 @@ const JsonLdGenerator: React.FC<JsonLdGeneratorProps > = ({ data, urlWeb }) => {
     organizationLogoUrl,
   } = data;
 
+  // console.log(articleDescription);
+  
+    
+  // console.log(articleUrl);
+    
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": ["Article", "BlogPosting"],
-        "@id": articleId,
+        "@id": articleUrl,
         isPartOf: {
-          "@id": articleUrl,
+          "@id": urlWeb,
         },
         author: {
           name: authorName,
@@ -64,7 +69,7 @@ const JsonLdGenerator: React.FC<JsonLdGeneratorProps > = ({ data, urlWeb }) => {
           "@id": organizationId,
         },
         image: {
-          "@id": articleImageId,
+          "@id": articleImageUrl,
         },
         thumbnailUrl: articleImageUrl,
         articleSection: ["Agencia digital"], // Cambia esto si es necesario
@@ -84,13 +89,13 @@ const JsonLdGenerator: React.FC<JsonLdGeneratorProps > = ({ data, urlWeb }) => {
         name: articleTitle,
         // 
         isPartOf: {
-          "@id": `${urlWeb}/#website`, // Cambia esto al valor correcto
+          "@id": `${urlWeb}`, // Cambia esto al valor correcto
         },
         primaryImageOfPage: {
-          "@id": articleImageId,
+          "@id": articleImageUrl,
         },
         image: {
-          "@id": articleImageId,
+          "@id": articleImageUrl,
         },
         thumbnailUrl: articleImageUrl,
         datePublished: articleDatePublished,
@@ -165,16 +170,15 @@ const JsonLdGenerator: React.FC<JsonLdGeneratorProps > = ({ data, urlWeb }) => {
         logo: {
           "@type": "ImageObject",
           inLanguage: "es", // Cambia esto si es necesario
-          "@id": `${urlWeb}/#/schema/logo/image/`, // Cambia esto al valor correcto
+          "@id": `${organizationLogoUrl}`, // Cambia esto al valor correcto
           url: organizationLogoUrl,
           contentUrl: organizationLogoUrl,
           width: 678, // Cambia esto al valor real
           height: 695, // Cambia esto al valor real
           caption: organizationName, // Cambia esto al valor real
         },
-        image: {
-          
-          "@id": `${urlWeb}/#/schema/logo/image/`, // Cambia esto al valor correcto
+        image: {          
+          "@id": `${organizationLogoUrl}`, // Cambia esto al valor correcto
         },
         sameAs: [
           "https://www.facebook.com/SunquPacha/",
@@ -189,18 +193,19 @@ const JsonLdGenerator: React.FC<JsonLdGeneratorProps > = ({ data, urlWeb }) => {
           "@type": "ImageObject",
           inLanguage: "es", // Cambia esto si es necesario
           "@id": `${urlWeb}/#/schema/person/image/`, // Cambia esto al valor correcto
-          url: "http://0.gravatar.com/avatar/31197ff8b93898ffb1a2b97e4ec4c868?s=96&d=mm&r=g", // Cambia esto al valor real
-          contentUrl: "http://0.gravatar.com/avatar/31197ff8b93898ffb1a2b97e4ec4c868?s=96&d=mm&r=g", // Cambia esto al valor real
+          // url: "http://0.gravatar.com/avatar/31197ff8b93898ffb1a2b97e4ec4c868?s=96&d=mm&r=g", // Cambia esto al valor real
+          // contentUrl: "http://0.gravatar.com/avatar/31197ff8b93898ffb1a2b97e4ec4c868?s=96&d=mm&r=g", // Cambia esto al valor real
           caption: authorName,
         },
         sameAs: [
           `${urlWeb}`, // Cambia esto al valor real
         ],
-        url: `${urlWeb}/blog/author/admin/`, // Cambia esto al valor real
+        // url: `${urlWeb}/blog/author/admin/`, // Cambia esto al valor real
       },
     ],
   };
-
+  
+  
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

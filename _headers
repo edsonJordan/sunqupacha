@@ -1,12 +1,8 @@
-# Archivos HTML se almacenan en caché durante 1 hora
+# Configuración de caché para archivos HTML
 /*.html
   Cache-Control: max-age=3600
 
-# Archivos CSS y JS se almacenan en caché durante 1 año con "immutable"
-/static/css/*
+# Configuración de caché para archivos CSS y JavaScript
+/*.css
+/*.js
   Cache-Control: public, max-age=31536000, immutable
-  
-https://fonts.gstatic.com/*
-  Access-Control-Allow-Origin: https://sunqupacha.com
-
-# Otras reglas de caché...

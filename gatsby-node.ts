@@ -40,7 +40,8 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
               childImageSharp {
               gatsbyImageData(
                 layout: CONSTRAINED
-                width: 800 # Ajusta el ancho según tus necesidades
+                width: 800 
+                quality: 90
               )
             }
             }
@@ -111,19 +112,107 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
        nodes{
          name
          slug
-         uri
+         uri         
          posts{
            nodes{
              title
              excerpt
              slug
              uri
+             date(formatString: "D MMM, YYYY")
+              seo{
+                readingTime
+              }
            }
            
          }
        }
      }
    }
+  `);
+
+
+  const servicios = await graphql<QueryResult>(`
+  {
+    allWpServicio{
+      nodes{
+        slug
+        title
+        content
+        date(formatString: "D MMM, YYYY ")
+        author {
+          node {
+            id
+          }
+        }
+        seo {
+          readingTime
+          canonical
+          cornerstone
+          focuskw
+          fullHead
+          metaDesc
+          metaKeywords
+          metaRobotsNofollow
+          metaRobotsNoindex
+          opengraphAuthor
+          opengraphDescription
+          opengraphModifiedTime
+          opengraphPublishedTime
+          opengraphPublisher
+          opengraphSiteName
+          opengraphTitle
+          readingTime
+          opengraphUrl
+          opengraphType
+          title
+          twitterDescription
+          twitterTitle
+          schema{
+            articleType
+            pageType
+            raw
+          }
+          breadcrumbs {
+            text
+            url
+          }
+        }
+        featuredImage {          
+          node{
+            localFile{
+              childImageSharp {
+              gatsbyImageData(
+                layout: CONSTRAINED
+                height:400
+                quality: 100
+              )
+            }
+            }
+            sourceUrl
+            altText
+          }
+        }
+        iconimage {
+          fieldGroupName
+          iconimage {
+            id
+            sourceUrl
+            localFile {
+              relativePath
+              childImageSharp {
+                id
+                
+                gatsbyImageData
+              }
+              id
+            } 
+            
+          }
+        }
+      }
+    }
+  }
   `);
 
   if (result.errors) {
@@ -135,11 +224,26 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
  if (categories.errors) {
     throw result.errors;
   }
+  if (servicios.errors) {
+    throw result.errors;
+  }
   // Obtén la plantilla de la página de publicación
   const postTemplate = path.resolve("src/templates/post.tsx"); // Ajusta la ruta según tu proyecto
   const categorieTemplate = path.resolve("src/templates/categoria.tsx"); 
-  
-  
+  const serviceTemplate = path.resolve("src/templates/servicio.tsx"); 
+
+  servicios.data.allWpServicio.nodes.forEach((postNode:any) => {
+    createPage({
+      path: `servicio/${postNode.slug}`, // Define la ruta de la página
+      component: serviceTemplate,
+      context: {
+        slug: postNode.slug,
+        data: postNode,
+        site:siteData.data.wp
+        // Otros datos de contexto que necesitas
+      },
+    });
+  });
 
   // Itera sobre los nodos y crea las páginas dinámicas
   result.data.allWpPost.nodes.forEach((postNode:any) => {
@@ -168,5 +272,9 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
       },
     });
   });
+
+
+
+
 
 };

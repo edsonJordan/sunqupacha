@@ -29,39 +29,36 @@ const config: GatsbyConfig = {
           }
         }
       }
-    }
-    ,
+    },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: `gatsby-plugin-netlify`,
       options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          "G-8K94PR2RE9", // Google Analytics / GA
-          // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
-          // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
-        ],
-        // This object gets passed directly to the gtag config command
-        // This config will be shared across all trackingIds
-        /* gtagConfig: {
-          optimize_id: "OPT_CONTAINER_ID",
-          anonymize_ip: true,
-          cookie_expires: 0,
-        }, */
-        // This object is used for configuration specific to this plugin
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: true,
-          // Setting this parameter is also optional
-          /* respectDNT: true,
-          // Avoids sending pageview hits from custom paths
-          exclude: ["/preview/**", "/do-not-track/me/too/"],
-          // Defaults to https://www.googletagmanager.com
-          origin: "YOUR_SELF_HOSTED_ORIGIN",
-          // Delays processing pageview events on route update (in milliseconds)
-          delayOnRouteUpdate: 0, */
+        headers: {
+          "/**/*.html": [
+            "cache-control: public",
+            "cache-control: max-age=0",
+            "cache-control: must-revalidate",
+          ],
+          "/page-data/*.json": [
+            "cache-control: public",
+            "cache-control: max-age=0",
+            "cache-control: must-revalidate",
+          ],
+          "/app-data.json": [
+            "cache-control: public",
+            "cache-control: max-age=0",
+            "cache-control: must-revalidate",
+          ],
+          "/static/*": [
+            "cache-control: public",
+            "cache-control: max-age=31536000",
+            "cache-control: immutable",
+          ],
         },
       },
-    },
+    }
+    ,
+   
     {
       // 2735675966651735
       // antiguo 635580070875733
@@ -73,18 +70,28 @@ const config: GatsbyConfig = {
     },
     {
       
-    resolve: 'gatsby-source-wordpress',
-    
-    options: {
-      url: process.env.WPGRAPHQL_URL,
-      protocol: `http`,
-        hostingWPCOM: false,
-        // useACF: true,
-    }
-    
-  }, 
+      resolve: 'gatsby-source-wordpress',
+      
+      options: {
+        url: process.env.WPGRAPHQL_URL,
+        protocol: `http`,
+          hostingWPCOM: false,
+          // useACF: true,
+      }
+      
+    }, 
   "gatsby-plugin-image", 
-  "gatsby-plugin-sharp", 
+  {
+    resolve:"gatsby-plugin-sharp",
+    options:{
+      defaults: {
+        formats: [`auto`, `webp`],
+        placeholder: `dominantColor`,
+        breakpoints: [320, 744, 1024, 1280, 1440],
+      }
+    }
+  }
+  , 
   {
     resolve: `gatsby-plugin-preload-fonts`,
     options: {

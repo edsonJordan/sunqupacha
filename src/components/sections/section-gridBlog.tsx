@@ -13,9 +13,21 @@ interface Item {
   id: number;
   title: string;
   content:string;
+  excerpt:string;
+  slug:string;
+  date:string;
+  seo:{
+    readingTime:number
+  }
+  categories:{
+    nodes:{
+      map:Map;
+      name:string;
+    }
+  }
 }
 
-const itemsPerPage = 5;
+const itemsPerPage = 6;
 
 
  
@@ -32,6 +44,11 @@ const SectionGridBlog = (props: Props) => {
           slug
           excerpt
           title
+          categories{
+            nodes{
+              name
+            }
+          }
           author {
             node {
               firstName
@@ -49,7 +66,8 @@ const SectionGridBlog = (props: Props) => {
   useEffect(() => {
     // Simulated API call to fetch items
     setItems(dataPosts.allWpPost.nodes);
-
+      // console.log(dataPosts.allWpPost.nodes);
+      
   }, []);
   // console.log(dataPosts.allWpPost);
   
@@ -67,7 +85,19 @@ const SectionGridBlog = (props: Props) => {
             {currentItems.map((item, index) => (
                 <article className="card card--blog"key={index}>
                   <div className="card-header">
-
+                    <div className="info-blog">
+                      <div className="tags-blog">
+                        {item.categories.nodes.map((category, catIndex) => (
+                          <div className="tag-blog" key={catIndex}>
+                            <p>{category.name}</p>
+                          </div>
+                        ))}                        
+                      </div>
+                      <div className="fecha-blog">
+                        {item.date}
+                      </div>
+                      <div className="time-read">{item.seo.readingTime}min de lectura</div>
+                    </div>
                     <h2 className="">
                       {item.title}
                     </h2>                    

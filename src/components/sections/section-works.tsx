@@ -20,17 +20,14 @@ const SectionWorks = (props: Props) => {
               <article className="card">
                 <div className="card__content">
                   <div className="card__image">
-                    {/* <Hero1
-                      className="image"
-                    /> */}
                      <StaticImage
-                      src="./../../images/pages/hero1.jpg" // Ruta relativa a la carpeta "src/images"
-                      alt="Mi imagen"
+                      src="./../../images/pages/hero1.jpg"
+                      alt="Metas de sunqupacha"
+                      title='Nos dedicamos a ayudarte a alcanzar tus metas en línea'
                       className='h-full object-cover'
-                      placeholder="blurred" // Puedes cambiar esto a "none" o "tracedSVG" según tus preferencias
-                      // layout="fixed"
-                      width={942} // Ancho deseado de la imagen
-                      height={971} // Altura deseada de la imagen
+                      placeholder="blurred" 
+                      width={942} 
+                      height={971} 
                     />
                   </div>                  
                   <div className="text__card">
@@ -46,18 +43,14 @@ const SectionWorks = (props: Props) => {
               <article className="card">
                 <div className="card__content">
                   <div className="card__image">
-                  {/* <Hero2
-                      className="image"
-                    /> */}
                     <StaticImage
                       src="./../../images/pages/hero2.jpg" // Ruta relativa a la carpeta "src/images"
-                      
-                      alt="Mi imagen"
+                      title='En un mundo digital competitivo, te brindamos una ventaja'
+                      alt="Enfoque en los competidores de SunquPacha"
                       className='w-full object-contain '
-                      placeholder="blurred" // Puedes cambiar esto a "none" o "tracedSVG" según tus preferencias
-                      // layout="fixed"
-                      width={942} // Ancho deseado de la imagen
-                      height={971} // Altura deseada de la imagen
+                      placeholder="blurred" 
+                      width={942} 
+                      height={971} 
                     />
                   </div>                  
                     <div className="text__card">
@@ -65,7 +58,7 @@ const SectionWorks = (props: Props) => {
                           Competidores
                         </h3>
                         <p>
-                        En un mundo digital competitivo, te brindamos una ventaja. Nuestro enfoque en estrategias de desarrollo web y marketing digital te ayudará a destacarte entre tus competidores. Creamos soluciones únicas que te permiten sobresalir y captar la atención de tu audiencia.
+                          En un mundo digital competitivo, te brindamos una ventaja. Nuestro enfoque en estrategias de desarrollo web y marketing digital te ayudará a destacarte entre tus competidores. Creamos soluciones únicas que te permiten sobresalir y captar la atención de tu audiencia.
                         </p>
                       </div>
                   </div>
@@ -74,14 +67,13 @@ const SectionWorks = (props: Props) => {
                   <div className="card__content">
                     <div className="card__image">
                     <StaticImage
-                      src="./../../images/pages/hero3.jpg" // Ruta relativa a la carpeta "src/images"
-                      
-                      alt="Mi imagen"
+                      src="./../../images/pages/hero3.jpg" 
+                      title='Nuestras estrategias están diseñadas para impulsar tu presencia en línea'
+                      alt="Elaborando una estrategia: SunquPacha"
                       className='w-full object-cover '
-                      placeholder="blurred" // Puedes cambiar esto a "none" o "tracedSVG" según tus preferencias
-                      // layout="fixed"
-                      width={497} // Ancho deseado de la imagen
-                      height={518} // Altura deseada de la imagen
+                      placeholder="blurred" 
+                      width={497} 
+                      height={518} 
                     />
                     {/* <Hero3
                         className="image"
@@ -92,7 +84,7 @@ const SectionWorks = (props: Props) => {
                       Estrategia
                     </h3>
                     <p>
-                    Nuestras estrategias están diseñadas para impulsar tu presencia en línea. Desde el diseño de sitios web impactantes hasta la implementación de técnicas de marketing digital efectivas, trabajamos en conjunto para crear una estrategia sólida que respalde tus objetivos comerciales y te brinde resultados medibles
+                      Nuestras estrategias están diseñadas para impulsar tu presencia en línea. Desde el diseño de sitios web impactantes hasta la implementación de técnicas de marketing digital efectivas, trabajamos en conjunto para crear una estrategia sólida que respalde tus objetivos comerciales y te brinde resultados medibles
                     </p>
                   </div>
                   </div>
@@ -100,18 +92,14 @@ const SectionWorks = (props: Props) => {
                 <article className="card">
                   <div className="card__content">
                     <div className="card__image">
-                  {/* <Hero4
-                     className="image"
-                    /> */}
                     <StaticImage
-                      src="./../../images/pages/hero4.jpg" // Ruta relativa a la carpeta "src/images"
-                      
-                      alt="Mi imagen"
+                      src="./../../images/pages/hero4.jpg"                       
+                      alt="Lanzamiento : SunquPacha"
+                      title='El lanzamiento exitoso de tu presencia en línea es crucial'
                       className=' w-full object-cover '
-                      placeholder="blurred" // Puedes cambiar esto a "none" o "tracedSVG" según tus preferencias
-                      // layout="fixed"
-                      width={360} // Ancho deseado de la imagen
-                      height={295} // Altura deseada de la imagen
+                      placeholder="blurred"
+                      width={360}
+                      height={295}
                     />
                   </div>
                   <div className="text__card">

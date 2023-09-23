@@ -15,12 +15,13 @@ interface SeoMetaTagsProps {
     logoImage?:string;
     canonical?:string;
     noIndex?:boolean;
+    slug?:string;
   // image: string;
   // url: string;
   // twitterUsername: string;
 }
 
-export const SeoStatic: React.FC<SeoMetaTagsProps> = ( {title, metaDesc, titleSection, opengraphDescription, ogimage, tittleTwitter,metaTwitter, logoImage, canonical, noIndex = false, children}) => {
+export const SeoStatic: React.FC<SeoMetaTagsProps> = ( {title, metaDesc, titleSection, opengraphDescription, ogimage, tittleTwitter,metaTwitter, logoImage, canonical, slug, noIndex = false, children}) => {
   const urlWeb : string | undefined = process.env.SITE_URL;
   
 
@@ -32,10 +33,10 @@ export const SeoStatic: React.FC<SeoMetaTagsProps> = ( {title, metaDesc, titleSe
   const dataLD =  {
     "@context": "http://schema.org",
     "@type": "WebPage",
-    Url: `${urlWeb}`,
+    Url: `${urlWeb}${slug}`,
     Title: `${title}`,
     Description: `${opengraphDescription}`,
-    image: `${urlWeb}/${ogimage}`,
+    image: `${urlWeb}${ogimage}`,
     datePublished: "2023-09-01T18:20:40+00:00",
     dateModified: "2023-09-02T16:53:21+00:00",
     authorName: "admin",
@@ -58,14 +59,15 @@ export const SeoStatic: React.FC<SeoMetaTagsProps> = ( {title, metaDesc, titleSe
     }
   };
   
-
-
+  // console.log(dataLD);
+  
+  
   return (
     <>
       <html lang="es" />
       <meta name="description" content={metaDesc} />
       <title>{title}</title>
-        <link rel="canonical" href={`${urlWeb}${canonical}`} />
+        {/* <link rel="canonical" href={`${urlWeb}${canonical}`} /> */}
         {/* OpenGraph meta tags */}
         <meta property="og:url" content={`${urlWeb}`} />
         <meta property="og:type" content="website" />

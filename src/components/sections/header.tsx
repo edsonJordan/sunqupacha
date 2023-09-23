@@ -10,11 +10,12 @@ const Header: React.FC = () => {
     <header className='header' >   
         <nav className='navigation'>  
             <div className='flex items-center justify-between'>
-            <Link className='logo' to="/">
+            <Link className='logo' title='Nuestra página de Inicio' to="/">
                 <StaticImage
                       src="./../../images/pages/logo-tiny.png" // Ruta relativa a la carpeta "src/images"
                       className=' w-12 object-contain'
-                      alt="Mi imagen"
+                      alt="Logo SunquPacha"
+                      title='SunquPacha: Agencia de Desarrollo Web en Perú'
                       placeholder="blurred" // Puedes cambiar esto a "none" o "tracedSVG" según tus preferencias
                       // layout="fixed"
                       width={200} // Ancho deseado de la imagen
@@ -27,23 +28,23 @@ const Header: React.FC = () => {
             </div>
             <ul className={statusMenu ? "navigation__list active":"navigation__list "}>
                 <li>
-                    <Link className='navigation__link' to="/">Inicio</Link>
+                    <Link title='Nuestra página de Inicio ' className='navigation__link' to="/">Inicio</Link>
                 </li>
                 <li>
-                    <Link className='navigation__link' to="/servicios">Servicios</Link>
+                    <Link title='Nuestros servicios' className='navigation__link' to="/servicios">Servicios</Link>
                 </li>
                 <li>
-                    <Link className='navigation__link' to="/industrias">Industrias</Link>
+                    <Link title='Las industrias que dominamos' className='navigation__link' to="/industrias">Industrias</Link>
                 </li>
                 
                 <li>
-                    <Link className='navigation__link' to="/blog">Blog</Link>
+                    <Link title='Nuestro Blog' className='navigation__link' to="/blog">Blog</Link>
                 </li>
                 <li>
-                    <Link className='navigation__link' to="/nosotros">Acerca de Nosotros</Link>
+                    <Link title='Acerca de Nosotros' className='navigation__link' to="/nosotros">Acerca de Nosotros</Link>
                 </li>
                 <li>
-                    <Link className='btn pill' to="/contactenos">Contactanos</Link>
+                    <Link title='Formulario para contactarnos' className='btn pill' to="/contactenos">Contactanos</Link>
                 </li>
                 
                 

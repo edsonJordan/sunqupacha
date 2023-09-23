@@ -4,12 +4,7 @@ import React from 'react';
 import Header from "../components/sections/header";
 import Footer from "../components/sections/footer";
 
-//Sections
-import SectionBannerContact from "../components/sections/section-bannerContact";
-import SectionContactEmail from "../components/sections/section-contactEmail";
 
-
-// src/components/sections/section-contactEmail.tsx
 
 const Contactenos: React.FC = () => {
 

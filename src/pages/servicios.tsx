@@ -1,7 +1,10 @@
+import React from 'react';
+import { HeadFC, graphql, useStaticQuery } from "gatsby";
+
+
+//Transversales
 import Header from "./../components/sections/header";
 import Footer from "./../components/sections/footer";
-
-import React from 'react';
 
 //Sections
 import SectionBannerService from "../components/sections/section-bannerServices";
@@ -9,15 +12,17 @@ import SectionGridServices from "../components/sections/section-gridServices";
 import SectionContactEmail from "../components/sections/section-contactEmail";
 import SectionWhySunqupacha from "../components/sections/section-whySunqupacha"
 import { SeoStatic } from "../components/sections/seoStatic";
-import { HeadFC, graphql, useStaticQuery } from "gatsby";
+
+//data 
 
 
 
-const Specialists: React.FC = () => {
+const Services: React.FC = () => {
  
+/*   const servicios = imagesPage
+  console.log(servicios); */
 
-
-
+  
   return (
     <>
     <Header />
@@ -46,7 +51,9 @@ const Specialists: React.FC = () => {
   );
 };
 
-export default Specialists;
+export default Services;
+
+
 export const Head: HeadFC = () => {
   const imagesPage = useStaticQuery(graphql`
   query {
@@ -66,8 +73,7 @@ export const Head: HeadFC = () => {
           }
         }
       }
-    }
-    
+    }    
     logoImage: allFile(
       filter: {
         extension: { regex: "/(png)/" }
@@ -85,10 +91,32 @@ export const Head: HeadFC = () => {
         }
       }
     }
+    allWpServicio{
+      nodes{
+        slug
+        title
+        excerpt
+        featuredImageId
+        iconimage{
+          fieldGroupName
+          iconimage {
+            id            
+            localFile{
+              childImageSharp{
+                gatsbyImageData
+              }
+            }
+          }
+        }       
+      }
+    }
   }
 `);
+
   const imagenSection = imagesPage.logoSectionImage.nodes[0].childImageSharp.fluid.src;
   const imagenLogo = imagesPage.logoImage.nodes[0].childImageSharp.fluid.src;
+
+
   return (
   <SeoStatic 
       title={"Servicios - SunquPacha"}
@@ -100,7 +128,7 @@ export const Head: HeadFC = () => {
       metaTwitter="Servicios de diseño web y marketing digital en Perú. Transformamos tus ideas en sitios web impactantes y aplicamos estrategias efectivas para tu éxito en línea."
       logoImage={imagenLogo}
       canonical="/servicios"
-     
+      slug="/servicios"
   >
     </SeoStatic>
 
